@@ -1,35 +1,83 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// App.tsx
+import React, { useEffect, useState } from "react";
+import Papa from "papaparse";
+import Sidebar from "./components/Sidebar";
+import "./App.css";
 
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+interface CategoryData {
+  [category: string]: string[];
 }
 
-export default App
+const App: React.FC = () => {
+  const [categories, setCategories] = useState<CategoryData>({});
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    setIsLoading(true);
+    setError(null);
+
+    fetch("/data/Heading.csv")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Failed to fetch CSV: ${response.status} ${response.statusText}`);
+        }
+        return response.text();
+      })
+      .then((csvData) => {
+        console.log("CSV data loaded:", csvData.substring(0, 100) + "...");
+
+        const parsed = Papa.parse(csvData, {
+          header: true,
+          skipEmptyLines: true,
+          transformHeader: (header) => header.trim().toLowerCase(),
+        });
+
+        console.log("Parsed data:", parsed.data);
+
+        if (parsed.errors.length > 0) {
+          console.error("CSV parsing errors:", parsed.errors);
+        }
+
+        const result: CategoryData = {};
+        parsed.data.forEach((row: any) => {
+          const rowEntries = Object.entries(row);
+          const category = rowEntries.find(([key]) => key.toLowerCase() === "category")?.[1]?.trim();
+          const subcategory = rowEntries.find(([key]) => key.toLowerCase() === "subcategory")?.[1]?.trim();
+
+          console.log("Category:", category, "Subcategory:", subcategory);
+
+          if (category && subcategory) {
+            if (!result[category]) {
+              result[category] = [];
+            }
+            if (!result[category].includes(subcategory)) {
+              result[category].push(subcategory);
+            }
+          }
+        });
+
+        console.log("Processed categories:", result);
+        setCategories(result);
+      })
+      .catch((err) => {
+        console.error("Error loading CSV:", err);
+        setError(`Failed to load categories: ${err.message}`);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+  }, []);
+
+  return (
+    <div className="app-container">
+      <Sidebar categories={categories} isLoading={isLoading} error={error} />
+      <main className="main-content">
+        <h1 className="text-2xl font-bold">Content Area</h1>
+        {error && <p className="text-red-500 mt-4">{error}</p>}
+      </main>
+    </div>
+  );
+};
+
+export default App;

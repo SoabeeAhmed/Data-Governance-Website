@@ -1,0 +1,24 @@
+Heading,Subheading,Definition,Question
+Data Procurement,Data Source Identification,"Research and evaluate potential data providers ,Assess data quality, relevance, and reliability.",Are the internal and external sources currently providing data?
+Data Procurement,Data Source Identification,"Research and evaluate potential data providers ,Assess data quality, relevance, and reliability.",Has a background check or due diligence been conducted on the provider?
+Data Procurement,Data Source Identification,"Research and evaluate potential data providers ,Assess data quality, relevance, and reliability.","Is the data format compatible with our systems (CSV, JSON, APIs, etc.)?"
+Data Procurement,Data Source Identification,"Research and evaluate potential data providers ,Assess data quality, relevance, and reliability.",Has the data been tested for consistency and reliability over time?
+Data Procurement,Data Source Identification,"Research and evaluate potential data providers ,Assess data quality, relevance, and reliability.","Are data usage rights, licensing terms, and restrictions clearly defined?"
+Data Procurement,Data Source Identification,"Research and evaluate potential data providers ,Assess data quality, relevance, and reliability.",Does the provider offer industry-specific or domain-specific datasets?
+Data Procurement,Vendor Selection and Evaluation,"Evaluate vendors based on: Cost,Licensing terms,Support and service level agreements (SLAs),Issue RFPs (Request for Proposals) or RFIs (Information)",Is there flexibility or tiered pricing based on data usage or user volume?
+Data Procurement,Vendor Selection and Evaluation,"Evaluate vendors based on: Cost,Licensing terms,Support and service level agreements (SLAs),Issue RFPs (Request for Proposals) or RFIs (Information)","Is the license for single-use, multi-use, or enterprise-wide access?"
+Data Procurement,Vendor Selection and Evaluation,"Evaluate vendors based on: Cost,Licensing terms,Support and service level agreements (SLAs),Issue RFPs (Request for Proposals) or RFIs (Information)",Does the vendor provide 24/7 support or only during business hours?
+Data Procurement,Vendor Selection and Evaluation,"Evaluate vendors based on: Cost,Licensing terms,Support and service level agreements (SLAs),Issue RFPs (Request for Proposals) or RFIs (Information)",Does the SLA include provisions for data accuracy and freshness?
+Data Procurement,Vendor Selection and Evaluation,"Evaluate vendors based on: Cost,Licensing terms,Support and service level agreements (SLAs),Issue RFPs (Request for Proposals) or RFIs (Information)",Has a structured RFP or RFI process been conducted for transparency?
+Data Procurement,Contract Negotiation,"Data usage rights and limitations , Data delivery methods",Are there any restrictions on sharing the data across departments or regions?
+Data Procurement,Contract Negotiation,"Data usage rights and limitations , Data delivery methods",Are we purchasing the data outright or licensing it?
+Data Procurement,Contract Negotiation,"Data usage rights and limitations , Data delivery methods",Has the need been validated by business/data stakeholders?
+Data Procurement,Contract Negotiation,"Data usage rights and limitations , Data delivery methods",Is technical support available post-acquisition?
+Data Procurement,Data Acquisition ,Purchase or license the data,Is there a defined ROI or value metric associated with acquiring this data?
+Data Procurement,Data Acquisition ,Purchase or license the data,Are we purchasing the data outright or licensing it?
+Data Procurement,Data Acquisition ,Purchase or license the data,Has the need been validated by business/data stakeholders?
+Data Procurement,Data Acquisition ,Purchase or license the data,Is technical support available post-acquisition?
+Data Procurement,Renewal or Termination,"Review vendor performance and data utility regularly,Decide on renewal, renegotiation, or termination of data agreements",Is the vendor responsive and timely in resolving issues?
+Data Procurement,Renewal or Termination,"Review vendor performance and data utility regularly,Decide on renewal, renegotiation, or termination of data agreements","Does the renewal offer better terms, pricing, or expanded access?"
+Data Procurement,Renewal or Termination,"Review vendor performance and data utility regularly,Decide on renewal, renegotiation, or termination of data agreements",Are there opportunities to renegotiate based on actual usage or performance?
+Data Procurement,Renewal or Termination,"Review vendor performance and data utility regularly,Decide on renewal, renegotiation, or termination of data agreements","Has the data become obsolete, redundant, or replaced by better sources?"

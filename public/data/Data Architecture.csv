@@ -1,0 +1,24 @@
+Heading,Subheading,Definition,Question
+Data Architecture,Data Integration and Interoperability,"Determine if the data integration approach ensures seamless, relevant, and accessible data for business use.",Does the integration framework enable seamless data flow between systems?
+Data Architecture,Data Integration and Interoperability,"Determine if the data integration approach ensures seamless, relevant, and accessible data for business use.",Is integrated data accessible to authorised users in a timely manner?
+Data Architecture,Data Integration and Interoperability,"Determine if the data integration approach ensures seamless, relevant, and accessible data for business use.",Does the integration process maintain data consistency across platforms?
+Data Architecture,Data Integration and Interoperability,"Determine if the data integration approach ensures seamless, relevant, and accessible data for business use.",Is the data transformation process optimised for usability and analysis?
+Data Architecture,Data Integration and Interoperability,"Determine if the data integration approach ensures seamless, relevant, and accessible data for business use.","Are interoperability standards (APIs, data formats, protocols) well-defined?"
+Data Architecture,Data Integration and Interoperability,"Determine if the data integration approach ensures seamless, relevant, and accessible data for business use.",Is metadata captured and standardised for better data discovery?
+Data Architecture,Data Modeling and Design,Assess how data modelling influences business operations and decision-making,Does a well-structured data model improve reporting accuracy?
+Data Architecture,Data Modeling and Design,Assess how data modelling influences business operations and decision-making,Has effective data modelling reduced errors and inconsistencies?
+Data Architecture,Data Modeling and Design,Assess how data modelling influences business operations and decision-making,Does the model support real-time data processing and decision-making?
+Data Architecture,Data Modeling and Design,Assess how data modelling influences business operations and decision-making,Has improved data design led to better forecasting and trend analysis?
+Data Architecture,Data Modeling and Design,Assess how data modelling influences business operations and decision-making,Is the data model scalable to accommodate future growth?
+Data Architecture,Data Literacy,Evaluate employees’ understanding of data models and structures,Are employees trained to understand and interpret data models?
+Data Architecture,Data Literacy,Evaluate employees’ understanding of data models and structures,Do business users comprehend the relationships between data entities?
+Data Architecture,Data Literacy,Evaluate employees’ understanding of data models and structures,Is there documentation available to help teams navigate the data model?
+Data Architecture,Data Literacy,Evaluate employees’ understanding of data models and structures,How frequently are employees educated on evolving data structures?
+Data Architecture,Data Tools and Technology,Assess the technologies supporting data modelling and design,Are modern data modelling tools used for designing and maintaining schemas?
+Data Architecture,Data Tools and Technology,Assess the technologies supporting data modelling and design,Does the organisation use automation to optimise data modelling?
+Data Architecture,Data Tools and Technology,Assess the technologies supporting data modelling and design,Are best practices followed for versioning and updating data models?
+Data Architecture,Data Tools and Technology,Assess the technologies supporting data modelling and design,How frequently are data models reviewed and refined based on business needs?
+Data Architecture,Collaboration and Accessibility,Assess how well data models support cross-team collaboration and access.,Are data models designed to be easily interpreted by different teams?
+Data Architecture,Collaboration and Accessibility,Assess how well data models support cross-team collaboration and access.,Do teams have access to a unified data dictionary for reference?
+Data Architecture,Collaboration and Accessibility,Assess how well data models support cross-team collaboration and access.,Are data models standardised to facilitate cross-functional data sharing?
+Data Architecture,Collaboration and Accessibility,Assess how well data models support cross-team collaboration and access.,Does the data design enable smooth integration with external systems?

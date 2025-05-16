@@ -1,5 +1,7 @@
-// Sidebar.tsx
 import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
+
 
 interface SidebarProps {
   categories: {
@@ -42,9 +44,7 @@ const Sidebar: React.FC<SidebarProps> = ({ categories, isLoading = false, error 
                 className="category-button"
               >
                 <span>{category}</span>
-                <span className="text-sm text-gray-500">
-                  {activeCategory === category ? "▲" : "▼"}
-                </span>
+                <FontAwesomeIcon icon={activeCategory === category ? faMinus : faPlus} />
               </button>
 
               {activeCategory === category && subcategories.length > 0 && (

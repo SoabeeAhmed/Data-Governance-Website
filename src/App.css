@@ -1,6 +1,3 @@
-/* App.css */
-
-/* Reset and global styles */
 body, html {
   margin: 0;
   padding: 0;
@@ -10,14 +7,14 @@ body, html {
   height: 100%;
 }
 
-/* Layout styles */
+
 .app-container {
   display: flex;
   height: 100vh;
   overflow: hidden;
 }
 
-/* Sidebar styles with 3D effect and external margins */
+
 .sidebar {
   width: 280px;
   background-color: #fdfefe;
@@ -26,28 +23,28 @@ body, html {
   overflow-y: auto;
   box-shadow: 4px 4px 25px rgba(0, 0, 0, 0.1), -4px -4px 25px rgba(255, 255, 255, 0.1); /* Internal shadow for depth */
   color: black;
-  border-radius: 15px; /* Rounded corners for a smooth look */
+  border-radius: 15px; 
   transition: all 0.3s ease-in-out;
-  margin: 10px;  /* Margin from left edge */
-  margin-bottom: 0;
+  margin: 5px;
 }
 
 .sidebar:hover {
   box-shadow: 6px 6px 30px rgba(0, 0, 0, 0.2), -6px -6px 30px rgba(255, 255, 255, 0.2); /* Slightly more pronounced shadow on hover */
 }
 
-/* Sidebar Header */
+
 .sidebar h2 {
   font-size: 1.4rem;
   font-weight: 600;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
   color: rgb(30, 28, 28);
-  border-bottom: 2px solid #3498db;
-  padding-bottom: 0.75rem;
+  /* border-bottom: 2px solid #3498db; */
+  margin-top: 0.5px;
+  padding-bottom: 0.5rem;
   letter-spacing: 0.5px;
 }
 
-/* Category button styles */
+
 .category-button {
   width: 100%;
   text-align: left;
@@ -66,14 +63,27 @@ body, html {
   box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.1); 
 }
 
+.category-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; 
+  font-size: 1rem;
+}
+
+.category-icon {
+  font-size: 1.1rem;
+  color: #1f2937; 
+  min-width: 1.25rem; 
+}
+
 .category-button:hover {
   background-color: rgba(255, 255, 255, 0.15);
-  transform: translateX(5px) translateY(-2px); /* Adding depth when hovered */
+  transform: translateX(5px) translateY(-2px); 
 }
 
 .category-button:active {
   background-color: rgba(255, 255, 255, 0.2);
-  transform: translateX(3px) translateY(2px); /* Mimicking button press effect */
+  transform: translateX(3px) translateY(2px); 
 }
 
 .space-y-2 {
@@ -114,7 +124,7 @@ ul {
   transform: translateX(5px);
 }
 
-/* Loading, error, and empty states */
+
 .loading,
 .error,
 .no-categories {
@@ -162,14 +172,14 @@ ul {
   background-color: rgba(255, 255, 255, 0.08);
 }
 
-/* Category indicators */
+
 .text-sm.text-gray-500 {
   color: #3498db;
   font-size: 0.85rem;
   transition: transform 0.2s ease;
 }
 
-/* Main content */
+
 .main-content {
   flex: 1;
   padding: 2rem;
@@ -177,12 +187,12 @@ ul {
   background-color: #f9fafb;
 }
 
-/* Animations */
+
 li {
   transition: all 0.3s ease;
 }
 
-/* Custom scrollbar */
+
 .sidebar::-webkit-scrollbar {
   display: none;
 }
@@ -196,13 +206,13 @@ li {
   border-radius: 20px;
 }
 
-/* Active category styling */
+
 button.category-button:focus {
   outline: none;
   box-shadow: 0 0 0 2px #3498db;
 }
 
-/* Space for list items */
+
 .space-y-2 > li {
   margin-bottom: 0.5rem;
 }

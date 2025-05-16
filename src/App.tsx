@@ -4,7 +4,10 @@ import Sidebar from "./components/Sidebar";
 import "./App.css";
 
 interface CategoryData {
-  [category: string]: string[];
+  [category: string]: {
+    icon: string;
+    subcategories: string[];
+  };
 }
 
 const App: React.FC = () => {
@@ -24,39 +27,37 @@ const App: React.FC = () => {
         return response.text();
       })
       .then((csvData) => {
-        console.log("CSV data loaded:", csvData.substring(0, 100) + "...");
-
         const parsed = Papa.parse(csvData, {
           header: true,
           skipEmptyLines: true,
           transformHeader: (header) => header.trim().toLowerCase(),
         });
 
-        console.log("Parsed data:", parsed.data);
-
-        if (parsed.errors.length > 0) {
-          console.error("CSV parsing errors:", parsed.errors);
-        }
-
         const result: CategoryData = {};
+
         parsed.data.forEach((row: any) => {
-          const rowEntries = Object.entries(row);
-          const category = rowEntries.find(([key]) => key.toLowerCase() === "category")?.[1]?.trim();
-          const subcategory = rowEntries.find(([key]) => key.toLowerCase() === "subcategory")?.[1]?.trim();
+          const iconRaw = row["icon"]?.trim();
+          const category = row["category"]?.trim();
+          const subcategory = row["subcategory"]?.trim();
 
-          console.log("Category:", category, "Subcategory:", subcategory);
+          if (!iconRaw || !category) return;
 
-          if (category && subcategory) {
-            if (!result[category]) {
-              result[category] = [];
-            }
-            if (!result[category].includes(subcategory)) {
-              result[category].push(subcategory);
-            }
+          if (!result[category]) {
+            result[category] = {
+              icon: iconRaw, // e.g. fa-star
+              subcategories: [],
+            };
+          }
+
+          if (
+            subcategory &&
+            subcategory.toLowerCase() !== "none" &&
+            !result[category].subcategories.includes(subcategory)
+          ) {
+            result[category].subcategories.push(subcategory);
           }
         });
 
-        console.log("Processed categories:", result);
         setCategories(result);
       })
       .catch((err) => {

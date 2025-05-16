@@ -1,43 +1,43 @@
-category,subcategory
-Data Quality,Data Accuracy
-Data Quality,Data Completeness
-Data Quality,Data Consistency
-Data Quality,Data Reliability
-Data Quality,Data Quality Improvement and Training
-Data Quality,Data Quality Technology and Tools
-Data Quality,Data Quality Reporting and Compliance
-Data Quality,Data Quality Governance and Management
-Data Security and Confidentiality,Data Security
-Data Security and Confidentiality,Data Confidentiality
-Data Privacy,None
-Data Policies & Rules,Data Policy Development and Alignment
-Data Policies & Rules,Data Governance Council
-Data Policies & Rules,Data Governance Processes
-Data Stewardship,Data Impact Assessment 
-Data Stewardship,Data Literacy
-Data Stewardship,Data Tools and Technology
-Data Architecture,Data Integration and Interoperability
-Data Architecture,Data Modeling and Design
-Data Architecture,Data Literacy
-Data Architecture,Data Tools and Technology
-Data Architecture,Collaboration and Accessibility
-Data Procurement ,Data Source Identification
-Data Procurement ,Vendor Selection and Evaluation
-Data Procurement ,Contract Negotiation
-Data Procurement ,Data Acquisition
-Data Procurement ,Renewal or Termination
- Data Cataloging & Discovery,Metadata Management
- Data Cataloging & Discovery,Data Discovery
- Data Cataloging & Discovery,User Collaboration & Crowdsourcing
- Data Cataloging & Discovery,Search & Semantic Capabilities
- Data Cataloging & Discovery,Inventory and Ingest Metadata
-Theme based Data Maturity,Engaging with others
-Theme based Data Maturity,Having the right data skills and knowledge
-Theme based Data Maturity,Having the right systems
-Theme based Data Maturity,Knowing the data you have
-Theme based Data Maturity,Making decisions with data
-Theme based Data Maturity, Managing and using data ethically
-Theme based Data Maturity,Managing your data
-Theme based Data Maturity,Protecting your data
-Theme based Data Maturity,Setting your data direction
-Theme based Data Maturity,Taking responsibility for data
+icon,category,subcategory
+fa-solid fa-star,Data Quality,Data Accuracy
+fa-solid fa-star,Data Quality,Data Completeness
+fa-solid fa-star,Data Quality,Data Consistency
+fa-solid fa-star,Data Quality,Data Reliability
+fa-solid fa-star,Data Quality,Data Quality Improvement and Training
+fa-solid fa-star,Data Quality,Data Quality Technology and Tools
+fa-solid fa-star,Data Quality,Data Quality Reporting and Compliance
+fa-solid fa-star,Data Quality,Data Quality Governance and Management
+fa-solid fa-file-shield,Data Security and Confidentiality,Data Security
+fa-solid fa-file-shield,Data Security and Confidentiality,Data Confidentiality
+fa-solid fa-user-lock,Data Privacy,None
+fa-solid fa-file-lines,Data Policies & Rules,Data Policy Development and Alignment
+fa-solid fa-file-lines,Data Policies & Rules,Data Governance Council
+fa-solid fa-file-lines,Data Policies & Rules,Data Governance Processes
+fa-solid fa-house-user,Data Owneship and Stewardship,Data Impact Assessment 
+fa-solid fa-house-user,Data Owneship and Stewardship,Data Literacy
+fa-solid fa-house-user,Data Owneship and Stewardship,Data Tools and Technology
+fa-solid fa-database,Data Architecture,Data Integration and Interoperability
+fa-solid fa-database,Data Architecture,Data Modeling and Design
+fa-solid fa-database,Data Architecture,Data Literacy
+fa-solid fa-database,Data Architecture,Data Tools and Technology
+fa-solid fa-database,Data Architecture,Collaboration and Accessibility
+fa-solid fa-file-arrow-down,Data Procurement ,Data Source Identification
+fa-solid fa-file-arrow-down,Data Procurement ,Vendor Selection and Evaluation
+fa-solid fa-file-arrow-down,Data Procurement ,Contract Negotiation
+fa-solid fa-file-arrow-down,Data Procurement ,Data Acquisition
+fa-solid fa-file-arrow-down,Data Procurement ,Renewal or Termination
+fa-solid fa-book, Data Cataloging & Discovery,Metadata Management
+fa-solid fa-book, Data Cataloging & Discovery,Data Discovery
+fa-solid fa-book, Data Cataloging & Discovery,User Collaboration & Crowdsourcing
+fa-solid fa-book, Data Cataloging & Discovery,Search & Semantic Capabilities
+fa-solid fa-book, Data Cataloging & Discovery,Inventory and Ingest Metadata
+fa-solid fa-arrow-up-right-dots,Theme based Data Maturity,Engaging with others
+fa-solid fa-arrow-up-right-dots,Theme based Data Maturity,Having the right data skills and knowledge
+fa-solid fa-arrow-up-right-dots,Theme based Data Maturity,Having the right systems
+fa-solid fa-arrow-up-right-dots,Theme based Data Maturity,Knowing the data you have
+fa-solid fa-arrow-up-right-dots,Theme based Data Maturity,Making decisions with data
+fa-solid fa-arrow-up-right-dots,Theme based Data Maturity, Managing and using data ethically
+fa-solid fa-arrow-up-right-dots,Theme based Data Maturity,Managing your data
+fa-solid fa-arrow-up-right-dots,Theme based Data Maturity,Protecting your data
+fa-solid fa-arrow-up-right-dots,Theme based Data Maturity,Setting your data direction
+fa-solid fa-arrow-up-right-dots,Theme based Data Maturity,Taking responsibility for data

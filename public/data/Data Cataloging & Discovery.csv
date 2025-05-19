@@ -1,0 +1,24 @@
+category,subcategory,question
+Data Cataloging & Discovery,Metadata Management,Are metadata updates automated from source systems?
+Data Cataloging & Discovery,Metadata Management,Are data schemas and attributes documented and accessible?
+Data Cataloging & Discovery,Metadata Management,"Is business context attached to key data elements (e.g., KPI definitions)?"
+Data Cataloging & Discovery,Metadata Management,Is there a common glossary of business terms used across departments?
+Data Cataloging & Discovery,Metadata Management,Is the glossary integrated with data catalog or BI tools?
+Data Cataloging & Discovery,Metadata Management,"Are field names, types, formats, and constraints consistently documented?"
+Data Cataloging & Discovery,Data Discovery,Can users easily search for data assets across systems using keywords or metadata?
+Data Cataloging & Discovery,Data Discovery,"Are filters available to refine searches by data type, owner, classification, or system?"
+Data Cataloging & Discovery,Data Discovery,Is end-to-end lineage captured from source to consumption layer?
+Data Cataloging & Discovery,Data Discovery,Are security and privacy rules applied during automated discovery?
+Data Cataloging & Discovery,Data Discovery,Are profiling results stored and viewable within the data catalog?
+Data Cataloging & Discovery,User Collaboration & Crowdsourcing,Is there a review/comment system to provide feedback on data sets?
+Data Cataloging & Discovery,User Collaboration & Crowdsourcing,"Are there predefined tag categories (e.g., domain, sensitivity, use case)?"
+Data Cataloging & Discovery,User Collaboration & Crowdsourcing,Are annotations linked to lineage or quality insights?
+Data Cataloging & Discovery,User Collaboration & Crowdsourcing,Is there a platform or workspace for users to share data usage best practices?
+Data Cataloging & Discovery,Search & Semantic Capabilities,"Is the search engine context-aware (understands synonyms, business terms, and intent)?"
+Data Cataloging & Discovery,Search & Semantic Capabilities,"Is there a centralized business ontology that maps terms, definitions, and relationships?"
+Data Cataloging & Discovery,Search & Semantic Capabilities,Does the platform use ML models to improve data search relevance over time?
+Data Cataloging & Discovery,Search & Semantic Capabilities,"Are taxonomies (e.g., data domains, categories, hierarchies) standardized and maintained?"
+Data Cataloging & Discovery,Inventory & Ingest Metadata,"Are all key data sources (databases, data lakes, BI tools, APIs) included in metadata scans?"
+Data Cataloging & Discovery,Inventory & Ingest Metadata,Is metadata ingestion automated and scheduled regularly?
+Data Cataloging & Discovery,Inventory & Ingest Metadata,"Is technical metadata (e.g., schemas, data types, primary/foreign keys) captured accurately?"
+Data Cataloging & Discovery,Inventory & Ingest Metadata,"Are there native connectors available for common platforms (e.g., Snowflake, SAP, Tableau)?"

@@ -3,26 +3,26 @@ fa-star,Data Quality,Data Accuracy
 fa-star,Data Quality,Data Completeness
 fa-star,Data Quality,Data Consistency
 fa-star,Data Quality,Data Reliability
-fa-star,Data Quality,Data Quality Improvement and Training
-fa-star,Data Quality,Data Quality Technology and Tools
-fa-star,Data Quality,Data Quality Reporting and Compliance
-fa-star,Data Quality,Data Quality Governance and Management
-fa-file-shield,Data Security and Confidentiality,Data Security
-fa-file-shield,Data Security and Confidentiality,Data Confidentiality
+fa-star,Data Quality,Data Quality Improvement & Training
+fa-star,Data Quality,Data Quality Technology & Tools
+fa-star,Data Quality,Data Quality Reporting & Compliance
+fa-star,Data Quality,Data Quality Governance & Management
+fa-file-shield,Data Security & Confidentiality,Data Security
+fa-file-shield,Data Security & Confidentiality,Data Confidentiality
 fa-user-lock,Data Privacy,None
-fa-file-lines,Data Policies & Rules,Data Policy Development and Alignment
+fa-file-lines,Data Policies & Rules,Data Policy Development & Alignment
 fa-file-lines,Data Policies & Rules,Data Governance Council
 fa-file-lines,Data Policies & Rules,Data Governance Processes
-fa-house-user,Data Ownership and Stewardship,Data Impact Assessment 
-fa-house-user,Data Ownership and Stewardship,Data Literacy
-fa-house-user,Data Ownership and Stewardship,Data Tools and Technology
-fa-database,Data Architecture,Data Integration and Interoperability
-fa-database,Data Architecture,Data Modeling and Design
+fa-house-user,Data Ownership & Stewardship,Data Impact Assessment 
+fa-house-user,Data Ownership & Stewardship,Data Literacy
+fa-house-user,Data Ownership & Stewardship,Data Tools & Technology
+fa-database,Data Architecture,Data Integration & Interoperability
+fa-database,Data Architecture,Data Modeling & Design
 fa-database,Data Architecture,Data Literacy
-fa-database,Data Architecture,Data Tools and Technology
-fa-database,Data Architecture,Collaboration and Accessibility
+fa-database,Data Architecture,Data Tools & Technology
+fa-database,Data Architecture,Collaboration & Accessibility
 fa-file-arrow-down,Data Procurement ,Data Source Identification
-fa-file-arrow-down,Data Procurement ,Vendor Selection and Evaluation
+fa-file-arrow-down,Data Procurement ,Vendor Selection & Evaluation
 fa-file-arrow-down,Data Procurement ,Contract Negotiation
 fa-file-arrow-down,Data Procurement ,Data Acquisition
 fa-file-arrow-down,Data Procurement ,Renewal or Termination
@@ -30,13 +30,13 @@ fa-book, Data Cataloging & Discovery,Metadata Management
 fa-book, Data Cataloging & Discovery,Data Discovery
 fa-book, Data Cataloging & Discovery,User Collaboration & Crowdsourcing
 fa-book, Data Cataloging & Discovery,Search & Semantic Capabilities
-fa-book, Data Cataloging & Discovery,Inventory and Ingest Metadata
+fa-book, Data Cataloging & Discovery,Inventory & Ingest Metadata
 fa-arrow-up-right-dots,Theme Based Data Maturity,Engaging with others
-fa-arrow-up-right-dots,Theme Based Data Maturity,Having the right data skills and knowledge
+fa-arrow-up-right-dots,Theme Based Data Maturity,Having the right data skills & knowledge
 fa-arrow-up-right-dots,Theme Based Data Maturity,Having the right systems
 fa-arrow-up-right-dots,Theme Based Data Maturity,Knowing the data you have
 fa-arrow-up-right-dots,Theme Based Data Maturity,Making decisions with data
-fa-arrow-up-right-dots,Theme Based Data Maturity, Managing and using data ethically
+fa-arrow-up-right-dots,Theme Based Data Maturity, Managing & using data ethically
 fa-arrow-up-right-dots,Theme Based Data Maturity,Managing your data
 fa-arrow-up-right-dots,Theme Based Data Maturity,Protecting your data
 fa-arrow-up-right-dots,Theme Based Data Maturity,Setting your data direction

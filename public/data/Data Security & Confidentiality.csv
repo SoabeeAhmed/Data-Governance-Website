@@ -1,0 +1,13 @@
+category,subcategory,question
+Data Security & Confidentiality,Data Security,Is there a formal data security policy in place? 
+Data Security & Confidentiality,Data Security,Are there regular security audits to identify vulnerabilities? 
+Data Security & Confidentiality,Data Security,Does the organization use encryption to protect sensitive data at rest and in transit?
+Data Security & Confidentiality,Data Security,Are multi-factor authentication (MFA) and strong password policies enforced? 
+Data Security & Confidentiality,Data Security,Are employees trained on best practices for data security and cybersecurity risks? 
+Data Security & Confidentiality,Data Security,Is there a well-defined incident response plan for data breaches? 
+Data Security & Confidentiality,Data Confidentiality,Is confidential data automatically logged and monitored for suspicious access attempts? 
+Data Security & Confidentiality,Data Confidentiality,"Are legal and regulatory compliance requirements (e.g., GDPR, HIPAA) incorporated into data confidentiality policies? "
+Data Security & Confidentiality,Data Confidentiality,Is there a process to securely dispose of or anonymize confidential data when no longer needed? 
+Data Security & Confidentiality,Data Confidentiality,Are data loss prevention (DLP) solutions implemented to prevent unauthorized data sharing? 
+Data Security & Confidentiality,Data Confidentiality,Are physical security controls in place to restrict access to servers and data centers? 
+Data Security & Confidentiality,Data Confidentiality,Are communication channels secured when transferring confidential information? 

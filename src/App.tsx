@@ -142,7 +142,7 @@ const App: React.FC = () => {
 
       <main className="main-content">
         <div className="content-header">
-        <h1 className="text-2xl font-bold mb-4">Content Area</h1>
+          <h1 className="text-2xl font-bold mb-4">Data Quality Index</h1>
         </div>
         <div className="content-body">
 

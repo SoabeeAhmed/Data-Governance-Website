@@ -12,38 +12,45 @@ interface SidebarProps {
   };
   isLoading?: boolean;
   error?: string | null;
+  onSubcategoryClick: (category: string, subcategory: string) => void;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ categories, isLoading = false, error = null }) => {
+const Sidebar: React.FC<SidebarProps> = ({
+  categories,
+  isLoading = false,
+  error = null,
+  onSubcategoryClick,
+}) => {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
-  const handleClick = (category: string) => {
+  const handleCategoryClick = (category: string) => {
     setActiveCategory((prev) => (prev === category ? null : category));
   };
 
   const getIconByName = (iconName: string) => {
-    // Convert fa-star to faStar
     const camelName = iconName
-      .split('-')
-      .map((word, idx) => (idx === 0 ? word : word[0].toUpperCase() + word.slice(1)))
-      .join('');
+      .split("-")
+      .map((word, index) =>
+        index === 0 ? word : word.charAt(0).toUpperCase() + word.slice(1)
+      )
+      .join("");
     return (Icons as any)[camelName] || faPlus;
   };
 
   return (
     <aside className="sidebar">
-      <div><h2>Hello User</h2></div>
+      <h2 className="text-lg font-bold mb-4">Hello User</h2>
 
       {isLoading && (
-        <div className="loading">
-          <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-gray-900"></div>
-          <span className="ml-2">Loading categories...</span>
+        <div className="loading flex items-center">
+          <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-gray-900 mr-2"></div>
+          <span>Loading categories...</span>
         </div>
       )}
 
       {error && <div className="error">{error}</div>}
 
-      {!isLoading && !error && Object.entries(categories).length === 0 && (
+      {!isLoading && !error && Object.keys(categories).length === 0 && (
         <p className="no-categories">No categories available</p>
       )}
 
@@ -52,30 +59,34 @@ const Sidebar: React.FC<SidebarProps> = ({ categories, isLoading = false, error 
           {Object.entries(categories).map(([category, data]) => (
             <li key={category}>
               <button
-                onClick={() => handleClick(category)}
-                className="category-button flex items-center justify-between w-full"
+                onClick={() => handleCategoryClick(category)}
+                className="category-button"
               >
                 <div className="category-label">
-                  <FontAwesomeIcon icon={getIconByName(data.icon)} className="category-icon" />
-                  <span>{category}</span>
+                  <FontAwesomeIcon
+                    icon={getIconByName(data.icon)}
+                    className="category-icon"
+                  />
+                  <span className="font-medium">{category}</span>
                 </div>
-                <FontAwesomeIcon icon={activeCategory === category ? faMinus : faPlus} />
+                <FontAwesomeIcon
+                  icon={activeCategory === category ? faMinus : faPlus}
+                />
               </button>
 
               {activeCategory === category && data.subcategories.length > 0 && (
-                <ul className="subcategory-list space-y-1">
-                  {data.subcategories.map((sub) => (
-                    <li key={`${category}-${sub}`} className="subcategory-item">
-                      {sub}
+                <ul className="subcategory-list">
+                  {data.subcategories.map((subcategory) => (
+                    <li key={`${category}-${subcategory}`}>
+                      <button
+                        onClick={() => onSubcategoryClick(category, subcategory)}
+                        className="subcategory-item"
+                      >
+                        {subcategory}
+                      </button>
                     </li>
                   ))}
                 </ul>
-              )}
-
-              {activeCategory === category && data.subcategories.length === 0 && (
-                <p className="subcategory-list text-sm text-gray-500 italic">
-                  No subcategories
-                </p>
               )}
             </li>
           ))}

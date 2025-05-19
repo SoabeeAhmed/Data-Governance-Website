@@ -1,4 +1,4 @@
-Heading,Subheading,Definition,Question,,,,,
+category,subcategory,definition,question
 Data Security and Confidentiality,Data Security,"Ensuring protection of data against unauthorized access, breaches, and threats",Is there a formal data security policy in place? ,,,,,
 Data Security and Confidentiality,Data Security,"Ensuring protection of data against unauthorized access, breaches, and threats",Are there regular security audits to identify vulnerabilities? ,,,,,
 Data Security and Confidentiality,Data Security,"Ensuring protection of data against unauthorized access, breaches, and threats",Does the organization use encryption to protect sensitive data at rest and in transit?,,,,,

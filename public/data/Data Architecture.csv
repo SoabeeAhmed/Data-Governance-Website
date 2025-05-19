@@ -1,4 +1,4 @@
-Heading,Subheading,Definition,Question
+category,subcategory,definition,question
 Data Architecture,Data Integration and Interoperability,"Determine if the data integration approach ensures seamless, relevant, and accessible data for business use.",Does the integration framework enable seamless data flow between systems?
 Data Architecture,Data Integration and Interoperability,"Determine if the data integration approach ensures seamless, relevant, and accessible data for business use.",Is integrated data accessible to authorised users in a timely manner?
 Data Architecture,Data Integration and Interoperability,"Determine if the data integration approach ensures seamless, relevant, and accessible data for business use.",Does the integration process maintain data consistency across platforms?
@@ -10,10 +10,10 @@ Data Architecture,Data Modeling and Design,Assess how data modelling influences 
 Data Architecture,Data Modeling and Design,Assess how data modelling influences business operations and decision-making,Does the model support real-time data processing and decision-making?
 Data Architecture,Data Modeling and Design,Assess how data modelling influences business operations and decision-making,Has improved data design led to better forecasting and trend analysis?
 Data Architecture,Data Modeling and Design,Assess how data modelling influences business operations and decision-making,Is the data model scalable to accommodate future growth?
-Data Architecture,Data Literacy,Evaluate employees’ understanding of data models and structures,Are employees trained to understand and interpret data models?
-Data Architecture,Data Literacy,Evaluate employees’ understanding of data models and structures,Do business users comprehend the relationships between data entities?
-Data Architecture,Data Literacy,Evaluate employees’ understanding of data models and structures,Is there documentation available to help teams navigate the data model?
-Data Architecture,Data Literacy,Evaluate employees’ understanding of data models and structures,How frequently are employees educated on evolving data structures?
+Data Architecture,Data Literacy,Evaluate employeesï¿½ understanding of data models and structures,Are employees trained to understand and interpret data models?
+Data Architecture,Data Literacy,Evaluate employeesï¿½ understanding of data models and structures,Do business users comprehend the relationships between data entities?
+Data Architecture,Data Literacy,Evaluate employeesï¿½ understanding of data models and structures,Is there documentation available to help teams navigate the data model?
+Data Architecture,Data Literacy,Evaluate employeesï¿½ understanding of data models and structures,How frequently are employees educated on evolving data structures?
 Data Architecture,Data Tools and Technology,Assess the technologies supporting data modelling and design,Are modern data modelling tools used for designing and maintaining schemas?
 Data Architecture,Data Tools and Technology,Assess the technologies supporting data modelling and design,Does the organisation use automation to optimise data modelling?
 Data Architecture,Data Tools and Technology,Assess the technologies supporting data modelling and design,Are best practices followed for versioning and updating data models?

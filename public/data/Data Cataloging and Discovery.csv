@@ -1,4 +1,4 @@
-Heading,Subheading,Definition,Question,,,
+category,subcategory,definition,question
 Data Cataloging and Discovery,Metadata Management,"Technical Metadata,Business Metadata,Operational Metadata,Data dictionary,Business Glossary",Are metadata updates automated from source systems?,,,
 Data Cataloging and Discovery,Metadata Management,"Technical Metadata,Business Metadata,Operational Metadata,Data dictionary,Business Glossary",Are data schemas and attributes documented and accessible?,,,
 Data Cataloging and Discovery,Metadata Management,"Technical Metadata,Business Metadata,Operational Metadata,Data dictionary,Business Glossary","Is business context attached to key data elements (e.g., KPI definitions)?",,,

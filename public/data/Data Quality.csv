@@ -1,4 +1,4 @@
-Heading,Subheading,Definition,Question
+category,subcategory,definition,question
 Data Quality,Data Accuracy ,"Assessing the degree to which data is correct, free from errors, and up-to-date.",Is there a process in place to validate the accuracy of incoming data at the point of entry?
 Data Quality,Data Accuracy ,"Assessing the degree to which data is correct, free from errors, and up-to-date.",Are there regular audits conducted to assess the accuracy of critical data?
 Data Quality,Data Accuracy ,"Assessing the degree to which data is correct, free from errors, and up-to-date.",Does the organization have procedures for correcting inaccuracies once identified?

@@ -1,4 +1,4 @@
-Heading,Subheading,Definition,Question
+category,subcategory,definition,question
 Data Procurement,Data Source Identification,"Research and evaluate potential data providers ,Assess data quality, relevance, and reliability.",Are the internal and external sources currently providing data?
 Data Procurement,Data Source Identification,"Research and evaluate potential data providers ,Assess data quality, relevance, and reliability.",Has a background check or due diligence been conducted on the provider?
 Data Procurement,Data Source Identification,"Research and evaluate potential data providers ,Assess data quality, relevance, and reliability.","Is the data format compatible with our systems (CSV, JSON, APIs, etc.)?"

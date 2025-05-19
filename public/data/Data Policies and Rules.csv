@@ -1,6 +1,6 @@
-Heading,Subheading,Definition,Question,,,,,,
+category,subcategory,definition,question
 Data Policies and Rules,Data Policy Development and Alignment,How are data policies defined within the organization?,How are data policies defined within the organization?,,,,,,
-Data Policies and Rules,Data Policy Development and Alignment,How are data policies defined within the organization?,Do the policies align with the organization’s goals and regulatory requirements?,,,,,,
+Data Policies and Rules,Data Policy Development and Alignment,How are data policies defined within the organization?,Do the policies align with the organizationï¿½s goals and regulatory requirements?,,,,,,
 Data Policies and Rules,Data Policy Development and Alignment,How are data policies defined within the organization?,Is there a documented data governance policy in place?,,,,,,
 Data Policies and Rules,Data Policy Development and Alignment,How are data policies defined within the organization?,Are data governance policies reviewed and updated on a regular basis?,,,,,,
 Data Policies and Rules,Data Policy Development and Alignment,How are data policies defined within the organization?,Does the data governance policy include clear roles and responsibilities for data management?,,,,,,
@@ -13,7 +13,7 @@ Data Policies and Rules,Data Governance Council,NA,"Are meeting records, includi
 Data Policies and Rules,Data Governance Council,NA,Does the council provide strategic guidance that aligns data governance priorities with both short-term operational needs and long-term regulatory changes?,,,,,,
 Data Policies and Rules,Data Governance Council,NA,"Is there a dedicated subcommittee within the council focused on data quality, responsible for setting thresholds and monitoring continuous improvement?",,,,,,
 Data Policies and Rules,Data Governance Council,NA,"Does the council have formal, scheduled review cycles to reassess and update data governance strategies in response to emerging risks and regulatory changes?",,,,,,
-Data Policies and Rules,Data Governance Processes,NA,Are end-to-end procedures for the data lifecycle—from generation and validation to storage and archival—clearly documented for all pharma operations?,,,,,,
+Data Policies and Rules,Data Governance Processes,NA,Are end-to-end procedures for the data lifecycleï¿½from generation and validation to storage and archivalï¿½clearly documented for all pharma operations?,,,,,,
 Data Policies and Rules,Data Governance Processes,NA,Is there a standard methodology for validating data integrity and ensuring traceability throughout the entire data lifecycle?,,,,,,
 Data Policies and Rules,Data Governance Processes,NA,"Do the processes include clearly defined steps for addressing data quality issues, including remediation and root cause analysis?",,,,,,
 Data Policies and Rules,Data Governance Processes,NA,Are automated monitoring tools integrated into the processes to detect data anomalies and trigger real-time alerts?,,,,,,

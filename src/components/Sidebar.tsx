@@ -32,7 +32,7 @@ const Sidebar: React.FC<SidebarProps> = ({ categories, isLoading = false, error 
 
   return (
     <aside className="sidebar">
-      <h2>Hello User</h2>
+      <div><h2>Hello User</h2></div>
 
       {isLoading && (
         <div className="loading">

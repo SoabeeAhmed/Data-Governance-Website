@@ -1,43 +1,43 @@
-icon,category,subcategory
-fa-star,Data Quality,Data Accuracy
-fa-star,Data Quality,Data Completeness
-fa-star,Data Quality,Data Consistency
-fa-star,Data Quality,Data Reliability
-fa-star,Data Quality,Data Quality Improvement & Training
-fa-star,Data Quality,Data Quality Technology & Tools
-fa-star,Data Quality,Data Quality Reporting & Compliance
-fa-star,Data Quality,Data Quality Governance & Management
-fa-file-shield,Data Security & Confidentiality,Data Security
-fa-file-shield,Data Security & Confidentiality,Data Confidentiality
-fa-user-lock,Data Privacy,None
-fa-file-lines,Data Policies & Rules,Data Policy Development & Alignment
-fa-file-lines,Data Policies & Rules,Data Governance Council
-fa-file-lines,Data Policies & Rules,Data Governance Processes
-fa-house-user,Data Ownership & Stewardship,Data Impact Assessment 
-fa-house-user,Data Ownership & Stewardship,Data Literacy
-fa-house-user,Data Ownership & Stewardship,Data Tools & Technology
-fa-database,Data Architecture,Data Integration & Interoperability
-fa-database,Data Architecture,Data Modeling & Design
-fa-database,Data Architecture,Data Literacy
-fa-database,Data Architecture,Data Tools & Technology
-fa-database,Data Architecture,Collaboration & Accessibility
-fa-file-arrow-down,Data Procurement ,Data Source Identification
-fa-file-arrow-down,Data Procurement ,Vendor Selection & Evaluation
-fa-file-arrow-down,Data Procurement ,Contract Negotiation
-fa-file-arrow-down,Data Procurement ,Data Acquisition
-fa-file-arrow-down,Data Procurement ,Renewal or Termination
-fa-book, Data Cataloging & Discovery,Metadata Management
-fa-book, Data Cataloging & Discovery,Data Discovery
-fa-book, Data Cataloging & Discovery,User Collaboration & Crowdsourcing
-fa-book, Data Cataloging & Discovery,Search & Semantic Capabilities
-fa-book, Data Cataloging & Discovery,Inventory & Ingest Metadata
-fa-arrow-up-right-dots,Theme Based Data Maturity,Engaging with others
-fa-arrow-up-right-dots,Theme Based Data Maturity,Having the right data skills & knowledge
-fa-arrow-up-right-dots,Theme Based Data Maturity,Having the right systems
-fa-arrow-up-right-dots,Theme Based Data Maturity,Knowing the data you have
-fa-arrow-up-right-dots,Theme Based Data Maturity,Making decisions with data
-fa-arrow-up-right-dots,Theme Based Data Maturity,Managing & using data ethically
-fa-arrow-up-right-dots,Theme Based Data Maturity,Managing your data
-fa-arrow-up-right-dots,Theme Based Data Maturity,Protecting your data
-fa-arrow-up-right-dots,Theme Based Data Maturity,Setting your data direction
-fa-arrow-up-right-dots,Theme Based Data Maturity,Taking responsibility for data
+icon,category,subcategory,options
+fa-star,Data Quality,Data Accuracy,"1-Unaware/Initial (level 1),2-Aware/Managed (level 2),3-Defined/Developing (level 3),4-Implemented/Quantitatively Managed (level 4),5-Optimized/Governance Mastery (level 5)"
+fa-star,Data Quality,Data Completeness,"1-Unaware/Initial (level 1),2-Aware/Managed (level 2),3-Defined/Developing (level 3),4-Implemented/Quantitatively Managed (level 4),5-Optimized/Governance Mastery (level 5)"
+fa-star,Data Quality,Data Consistency,"1-Unaware/Initial (level 1),2-Aware/Managed (level 2),3-Defined/Developing (level 3),4-Implemented/Quantitatively Managed (level 4),5-Optimized/Governance Mastery (level 5)"
+fa-star,Data Quality,Data Reliability,"1-Unaware/Initial (level 1) ,2-Aware/Managed (level 2),3-Defined/Developing (level 3),4-Implemented/ Quantitatively Managed(level 4), 5-Optimized/Governance Mastery (level 5),0-Row Not Assessed"
+fa-star,Data Quality,Data Quality Improvement & Training,"1-Unaware/Initial (level 1) ,2-Aware/Managed (level 2),3-Defined/Developing (level 3),4-Implemented/ Quantitatively Managed(level 4), 5-Optimized/Governance Mastery (level 5),0-Row Not Assessed"
+fa-star,Data Quality,Data Quality Technology & Tools,"1-Unaware/Initial (level 1) ,2-Aware/Managed (level 2),3-Defined/Developing (level 3),4-Implemented/ Quantitatively Managed(level 4), 5-Optimized/Governance Mastery (level 5),0-Row Not Assessed"
+fa-star,Data Quality,Data Quality Reporting & Compliance,"1-Unaware/Initial (level 1) ,2-Aware/Managed (level 2),3-Defined/Developing (level 3),4-Implemented/ Quantitatively Managed(level 4), 5-Optimized/Governance Mastery (level 5),0-Row Not Assessed"
+fa-star,Data Quality,Data Quality Governance & Management,"1-Unaware/Initial (level 1) ,2-Aware/Managed (level 2),3-Defined/Developing (level 3),4-Implemented/ Quantitatively Managed(level 4), 5-Optimized/Governance Mastery (level 5),0-Row Not Assessed"
+fa-file-shield,Data Security & Confidentiality,Data Security,"1-Unaware/Initial (level 1) ,2-Aware/Managed (level 2),3-Defined/Developing (level 3),4-Implemented/ Quantitatively Managed(level 4), 5-Optimized/Governance Mastery (level 5),0-Row Not Assessed"
+fa-file-shield,Data Security & Confidentiality,Data Confidentiality,"1-Unaware/Initial (level 1) ,2-Aware/Managed (level 2),3-Defined/Developing (level 3),4-Implemented/ Quantitatively Managed(level 4), 5-Optimized/Governance Mastery (level 5),0-Row Not Assessed"
+fa-user-lock,Data Privacy,None,None
+fa-file-lines,Data Policies & Rules,Data Policy Development & Alignment,"1-Unaware/Initial (level 1) ,2-Aware/Managed (level 2),3-Defined/Developing (level 3),4-Implemented/ Quantitatively Managed(level 4), 5-Optimized/Governance Mastery (level 5),0-Row Not Assessed"
+fa-file-lines,Data Policies & Rules,Data Governance Council,"1-Unaware/Initial (level 1) ,2-Aware/Managed (level 2),3-Defined/Developing (level 3),4-Implemented/ Quantitatively Managed(level 4), 5-Optimized/Governance Mastery (level 5),0-Row Not Assessed"
+fa-file-lines,Data Policies & Rules,Data Governance Processes,"1-Unaware/Initial (level 1) ,2-Aware/Managed (level 2),3-Defined/Developing (level 3),4-Implemented/ Quantitatively Managed(level 4), 5-Optimized/Governance Mastery (level 5),0-Row Not Assessed"
+fa-house-user,Data Ownership & Stewardship,Data Impact Assessment ,"1-Unaware/Initial (level 1) ,2-Aware/Managed (level 2),3-Defined/Developing (level 3),4-Implemented/ Quantitatively Managed(level 4), 5-Optimized/Governance Mastery (level 5),0-Row Not Assessed"
+fa-house-user,Data Ownership & Stewardship,Data Literacy,"1-Unaware/Initial (level 1) ,2-Aware/Managed (level 2),3-Defined/Developing (level 3),4-Implemented/ Quantitatively Managed(level 4), 5-Optimized/Governance Mastery (level 5),0-Row Not Assessed"
+fa-house-user,Data Ownership & Stewardship,Data Tools & Technology,"1-Unaware/Initial (level 1) ,2-Aware/Managed (level 2),3-Defined/Developing (level 3),4-Implemented/ Quantitatively Managed(level 4), 5-Optimized/Governance Mastery (level 5),0-Row Not Assessed"
+fa-database,Data Architecture,Data Integration & Interoperability,"1-Unaware/Initial (level 1) ,2-Aware/Managed (level 2),3-Defined/Developing (level 3),4-Implemented/ Quantitatively Managed(level 4), 5-Optimized/Governance Mastery (level 5),0-Row Not Assessed"
+fa-database,Data Architecture,Data Modeling & Design,"1-Unaware/Initial (level 1) ,2-Aware/Managed (level 2),3-Defined/Developing (level 3),4-Implemented/ Quantitatively Managed(level 4), 5-Optimized/Governance Mastery (level 5),0-Row Not Assessed"
+fa-database,Data Architecture,Data Literacy,"1-Unaware/Initial (level 1) ,2-Aware/Managed (level 2),3-Defined/Developing (level 3),4-Implemented/ Quantitatively Managed(level 4), 5-Optimized/Governance Mastery (level 5),0-Row Not Assessed"
+fa-database,Data Architecture,Data Tools & Technology,"1-Unaware/Initial (level 1) ,2-Aware/Managed (level 2),3-Defined/Developing (level 3),4-Implemented/ Quantitatively Managed(level 4), 5-Optimized/Governance Mastery (level 5),0-Row Not Assessed"
+fa-database,Data Architecture,Collaboration & Accessibility,"1-Unaware/Initial (level 1) ,2-Aware/Managed (level 2),3-Defined/Developing (level 3),4-Implemented/ Quantitatively Managed(level 4), 5-Optimized/Governance Mastery (level 5),0-Row Not Assessed"
+fa-file-arrow-down,Data Procurement ,Data Source Identification,"1-Unaware/Initial (level 1) ,2-Aware/Managed (level 2),3-Defined/Developing (level 3),4-Implemented/ Quantitatively Managed(level 4), 5-Optimized/Governance Mastery (level 5),0-Row Not Assessed"
+fa-file-arrow-down,Data Procurement ,Vendor Selection & Evaluation,"1-Unaware/Initial (level 1) ,2-Aware/Managed (level 2),3-Defined/Developing (level 3),4-Implemented/ Quantitatively Managed(level 4), 5-Optimized/Governance Mastery (level 5),0-Row Not Assessed"
+fa-file-arrow-down,Data Procurement ,Contract Negotiation,"1-Unaware/Initial (level 1) ,2-Aware/Managed (level 2),3-Defined/Developing (level 3),4-Implemented/ Quantitatively Managed(level 4), 5-Optimized/Governance Mastery (level 5),0-Row Not Assessed"
+fa-file-arrow-down,Data Procurement ,Data Acquisition,"1-Unaware/Initial (level 1) ,2-Aware/Managed (level 2),3-Defined/Developing (level 3),4-Implemented/ Quantitatively Managed(level 4), 5-Optimized/Governance Mastery (level 5),0-Row Not Assessed"
+fa-file-arrow-down,Data Procurement ,Renewal or Termination,"1-Unaware/Initial (level 1) ,2-Aware/Managed (level 2),3-Defined/Developing (level 3),4-Implemented/ Quantitatively Managed(level 4), 5-Optimized/Governance Mastery (level 5),0-Row Not Assessed"
+fa-book, Data Cataloging & Discovery,Metadata Management,"1-Unaware/Initial (level 1) ,2-Aware/Managed (level 2),3-Defined/Developing (level 3),4-Implemented/ Quantitatively Managed(level 4), 5-Optimized/Governance Mastery (level 5),0-Row Not Assessed"
+fa-book, Data Cataloging & Discovery,Data Discovery,"1-Unaware/Initial (level 1) ,2-Aware/Managed (level 2),3-Defined/Developing (level 3),4-Implemented/ Quantitatively Managed(level 4), 5-Optimized/Governance Mastery (level 5),0-Row Not Assessed"
+fa-book, Data Cataloging & Discovery,User Collaboration & Crowdsourcing,"1-Unaware/Initial (level 1) ,2-Aware/Managed (level 2),3-Defined/Developing (level 3),4-Implemented/ Quantitatively Managed(level 4), 5-Optimized/Governance Mastery (level 5),0-Row Not Assessed"
+fa-book, Data Cataloging & Discovery,Search & Semantic Capabilities,"1-Unaware/Initial (level 1) ,2-Aware/Managed (level 2),3-Defined/Developing (level 3),4-Implemented/ Quantitatively Managed(level 4), 5-Optimized/Governance Mastery (level 5),0-Row Not Assessed"
+fa-book, Data Cataloging & Discovery,Inventory & Ingest Metadata,"1-Unaware/Initial (level 1) ,2-Aware/Managed (level 2),3-Defined/Developing (level 3),4-Implemented/ Quantitatively Managed(level 4), 5-Optimized/Governance Mastery (level 5),0-Row Not Assessed"
+fa-arrow-up-right-dots,Theme Based Data Maturity,Engaging with others,"1-Unaware/Initial (level 1) ,2-Aware/Managed (level 2),3-Defined/Developing (level 3),4-Implemented/ Quantitatively Managed(level 4), 5-Optimized/Governance Mastery (level 5),0-Row Not Assessed"
+fa-arrow-up-right-dots,Theme Based Data Maturity,Having the right data skills & knowledge,"1-Unaware/Initial (level 1) ,2-Aware/Managed (level 2),3-Defined/Developing (level 3),4-Implemented/ Quantitatively Managed(level 4), 5-Optimized/Governance Mastery (level 5),0-Row Not Assessed"
+fa-arrow-up-right-dots,Theme Based Data Maturity,Having the right systems,"1-Unaware/Initial (level 1) ,2-Aware/Managed (level 2),3-Defined/Developing (level 3),4-Implemented/ Quantitatively Managed(level 4), 5-Optimized/Governance Mastery (level 5),0-Row Not Assessed"
+fa-arrow-up-right-dots,Theme Based Data Maturity,Knowing the data you have,"1-Unaware/Initial (level 1) ,2-Aware/Managed (level 2),3-Defined/Developing (level 3),4-Implemented/ Quantitatively Managed(level 4), 5-Optimized/Governance Mastery (level 5),0-Row Not Assessed"
+fa-arrow-up-right-dots,Theme Based Data Maturity,Making decisions with data,"1-Unaware/Initial (level 1) ,2-Aware/Managed (level 2),3-Defined/Developing (level 3),4-Implemented/ Quantitatively Managed(level 4), 5-Optimized/Governance Mastery (level 5),0-Row Not Assessed"
+fa-arrow-up-right-dots,Theme Based Data Maturity,Managing & using data ethically,"1-Unaware/Initial (level 1) ,2-Aware/Managed (level 2),3-Defined/Developing (level 3),4-Implemented/ Quantitatively Managed(level 4), 5-Optimized/Governance Mastery (level 5),0-Row Not Assessed"
+fa-arrow-up-right-dots,Theme Based Data Maturity,Managing your data,"1-Unaware/Initial (level 1) ,2-Aware/Managed (level 2),3-Defined/Developing (level 3),4-Implemented/ Quantitatively Managed(level 4), 5-Optimized/Governance Mastery (level 5),0-Row Not Assessed"
+fa-arrow-up-right-dots,Theme Based Data Maturity,Protecting your data,"1-Unaware/Initial (level 1) ,2-Aware/Managed (level 2),3-Defined/Developing (level 3),4-Implemented/ Quantitatively Managed(level 4), 5-Optimized/Governance Mastery (level 5),0-Row Not Assessed"
+fa-arrow-up-right-dots,Theme Based Data Maturity,Setting your data direction,"1-Unaware/Initial (level 1) ,2-Aware/Managed (level 2),3-Defined/Developing (level 3),4-Implemented/ Quantitatively Managed(level 4), 5-Optimized/Governance Mastery (level 5),0-Row Not Assessed"
+fa-arrow-up-right-dots,Theme Based Data Maturity,Taking responsibility for data,"1-Unaware/Initial (level 1) ,2-Aware/Managed (level 2),3-Defined/Developing (level 3),4-Implemented/ Quantitatively Managed(level 4), 5-Optimized/Governance Mastery (level 5),0-Row Not Assessed"

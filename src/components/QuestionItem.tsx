@@ -1,11 +1,10 @@
-// components/QuestionItem.tsx
 import React from "react";
 
 interface QuestionItemProps {
   question: string;
   index: number;
-  value?: number;
-  onChange: (index: number, value: number) => void;
+  value?: number; // This is the selected value for the radio button
+  onChange: (index: number, value: number) => void; // Callback to handle answer change
 }
 
 const QuestionItem: React.FC<QuestionItemProps> = ({ question, index, value, onChange }) => {
@@ -17,10 +16,10 @@ const QuestionItem: React.FC<QuestionItemProps> = ({ question, index, value, onC
           <label key={num} className="flex items-center gap-1">
             <input
               type="radio"
-              name={`question-${index}`}
+              name={`question-${index}`} // Group radio buttons by question index
               value={num}
-              checked={value === num}
-              onChange={() => onChange(index, num)}
+              checked={value === num} // Check if the current option is selected
+              onChange={() => onChange(index, num)} // Call onChange to update the selected answer
             />
             {num}
           </label>

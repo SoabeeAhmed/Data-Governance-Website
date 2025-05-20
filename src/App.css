@@ -1,4 +1,3 @@
-/* Reset and base styles */
 body, html {
   margin: 0;
   padding: 0;
@@ -10,7 +9,7 @@ body, html {
 
 }
 
-/* App Container splits screen horizontally: 30% sidebar, 70% content */
+
 .app-container {
   display: flex;
   height: 100vh;
@@ -51,7 +50,7 @@ body, html {
   padding: 0.75rem 1rem;
   font-weight: 500;
   border-radius: 0.5rem;
-  background-color: rgba(163, 160, 160, 0.08);
+  background-color: rgba(255, 255, 255, 0.08);
   border: none;
   color: black;
   transition: all 0.3s ease, transform 0.2s ease;
@@ -64,6 +63,7 @@ body, html {
 }
 
 .category-button:hover {
+  background-color: rgba(255, 255, 255, 0.15);
   transform: translateX(5px) translateY(-2px);
 }
 
@@ -125,7 +125,7 @@ ul {
   transform: translateX(5px);
 }
 
-/* Main content area: right 70%, vertically split into header + body */
+
 .main-content {
   width: 80%;
   display: flex;
@@ -145,14 +145,10 @@ ul {
   justify-content: center;   /* Horizontal centering */
   align-items: center;       /* Vertical centering */
   font-size: 15px;           /* Font size */
-  font-weight: bold;  
-  margin-bottom: 5px;
-  margin-left:5px;
-  margin-right:5px;
-  border-radius: 5px;
+  font-weight: bold;         /* Optional: Make it bold */
 }
 
-/* Body: bottom 90% */
+
 .content-body {
   height: 90%;
   overflow-y: auto;
@@ -160,32 +156,11 @@ ul {
   padding-top: 0.5rem;
   box-sizing: border-box;
   background-color: #fefefe;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.03);
   border-top: 1px solid rgba(0, 0, 0, 0.05);
-  margin-left:5px;
-  border-radius: 5px;
-  margin-right: 5px;
-}
-.legend {
-  background-color: #dde9f3;
-  padding: 1rem;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  margin-bottom: 0.1rem;
-  border-left: 5px solid #155eaf;
-}
-
-.legend h3 {
-  margin-bottom: 0.1rem;
-  font-weight: bold;
-}
-
-.legend p {
-  color: #333;
 }
 
 
-/* Optional question card design */
 .question-card {
   background: #ffffff;
   padding: 1rem;
@@ -193,6 +168,7 @@ ul {
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  
 }
 
 .question-card:hover {
@@ -201,9 +177,6 @@ ul {
 }
 
 
-
-
-/* Scrollbar hiding for sidebar */
 .sidebar::-webkit-scrollbar {
   display: none;
 }
@@ -279,4 +252,291 @@ ul {
 .content-body::-webkit-scrollbar-thumb {
   background-color: rgba(138, 141, 142, 0.911);
   border-radius: 20px;
+}
+
+/* Additional styles for your App.css */
+
+/* Dashboard Overview Styles */
+.dashboard-overview {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.overall-score-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.score-display {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.score {
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  min-width: 80px;
+  text-align: center;
+}
+
+.score-high {
+  background-color: rgba(52, 211, 153, 0.2);
+  color: #059669;
+}
+
+.score-medium {
+  background-color: rgba(252, 211, 77, 0.2);
+  color: #d97706;
+}
+
+.score-low {
+  background-color: rgba(239, 68, 68, 0.2);
+  color: #dc2626;
+}
+
+.score-bar-container {
+  flex-grow: 1;
+  height: 12px;
+  background-color: #e5e7eb;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.score-bar {
+  height: 100%;
+  border-radius: 6px;
+}
+
+.score-bar-high {
+  background-color: #059669;
+}
+
+.score-bar-medium {
+  background-color: #d97706;
+}
+
+.score-bar-low {
+  background-color: #dc2626;
+}
+
+.category-scores {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.score-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.category-score-card {
+  background-color: #f9fafb;
+  border-radius: 6px;
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+}
+
+.score-display-small {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.score-small {
+  font-size: 1.25rem;
+  font-weight: bold;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  min-width: 40px;
+  text-align: center;
+}
+
+.recommended-actions {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.action-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.action-card {
+  padding: 1rem;
+  border-radius: 6px;
+  border-left-width: 4px;
+}
+
+.action-high {
+  background-color: rgba(239, 68, 68, 0.1);
+  border-left-color: #dc2626;
+}
+
+.action-medium {
+  background-color: rgba(252, 211, 77, 0.1);
+  border-left-color: #d97706;
+}
+
+.action-low {
+  background-color: rgba(52, 211, 153, 0.1);
+  border-left-color: #059669;
+}
+
+
+.question-card {
+  background: #ffffff;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.question-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* Rating radio buttons styling */
+.rating-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.75rem;
+}
+
+.rating-option {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.rating-option input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.rating-option label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: #f3f4f6;
+  color: #4b5563;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.rating-option input[type="radio"]:checked + label {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.rating-option:hover label {
+  background-color: #e5e7eb;
+}
+
+.rating-option input[type="radio"]:checked:hover + label {
+  background-color: #2563eb;
+}
+
+/* Definition box styling */
+.definition-box {
+  background-color: #f0f9ff;
+  border-left: 4px solid #3b82f6;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 0 6px 6px 0;
+}
+
+.definition-box h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #1e40af;
+}
+
+.definition-box p {
+  color: #334155;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+/* Action buttons */
+.action-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn {
+  padding: 0.5rem 1.25rem;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #2563eb;
+}
+
+.btn-secondary {
+  background-color: #ffffff;
+  color: #4b5563;
+  border: 1px solid #d1d5db;
+}
+
+.btn-secondary:hover {
+  background-color: #f9fafb;
+  border-color: #9ca3af;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+  }
+  
+  .main-content {
+    width: 100%;
+  }
+  
+  .score-cards-grid {
+    grid-template-columns: 1fr;
+  }
 }

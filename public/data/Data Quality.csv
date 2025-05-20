@@ -1,37 +1,37 @@
-category,subcategory,question
-Data Quality,Data Accuracy ,Is there a process in place to validate the accuracy of incoming data at the point of entry?
-Data Quality,Data Accuracy ,Are there regular audits conducted to assess the accuracy of critical data?
-Data Quality,Data Accuracy ,Does the organization have procedures for correcting inaccuracies once identified?
-Data Quality,Data Accuracy ,"Is there a consistent standard for defining ""accuracy"" across all data sets?"
-Data Quality,Data Accuracy ,Do you use automated tools to flag and correct errors in data?
-Data Quality,Data Completeness,Is there a data quality framework that defines acceptable levels of data completeness for key business processes?
-Data Quality,Data Completeness,Are there mechanisms in place to track and manage missing or incomplete data?
-Data Quality,Data Completeness,Is data completeness routinely monitored for all critical datasets?
-Data Quality,Data Completeness,Are stakeholders aware of the consequences of incomplete data on business decisions?
-Data Quality,Data Completeness,Do you regularly perform gap analysis to ensure all necessary data fields are captured?
-Data Quality,Data Consistency,"Are there clear guidelines for maintaining consistency in data formats (e.g., date formats, currency)?"
-Data Quality,Data Consistency,Is there a mechanism to resolve inconsistencies between different data sources?
-Data Quality,Data Consistency,Are data consistency checks performed automatically across systems and platforms?
-Data Quality,Data Consistency,Is there a designated role or team responsible for maintaining data consistency across the organization?
-Data Quality,Data Consistency,Does the organization monitor data consistency regularly through cross-system validation processes?
-Data Quality,Data Reliability,Does the organization validate data sources to ensure they are reliable and trustworthy?
-Data Quality,Data Reliability,Are data errors tracked and resolved to improve the reliability of data over time?
-Data Quality,Data Reliability,Is there a documented process for assessing the reliability of third-party data sources?
-Data Quality,Data Reliability,"Is the data management system configured to ensure redundancy, avoiding data loss?"
-Data Quality,Data Quality Improvement & Training,Does the organization provide training and awareness programs to staff on the importance of data quality?
-Data Quality,Data Quality Improvement & Training,Are there mechanisms to collect feedback on data quality from users and stakeholders?
-Data Quality,Data Quality Improvement & Training,Does the organization have a structured process to continuously improve data quality over time?
-Data Quality,Data Quality Improvement & Training,Are there incentives or measures in place to promote the maintenance of high data quality?
-Data Quality,Data Quality Technology & Tools,Does the organization use automated tools or software to monitor data quality?
-Data Quality,Data Quality Technology & Tools,Are data quality management tools integrated with other data management systems?
-Data Quality,Data Quality Technology & Tools,Are the data quality tools up-to-date and regularly reviewed for improvement?
-Data Quality,Data Quality Technology & Tools,Is there a process to evaluate and implement new data quality technologies or solutions?
-Data Quality,Data Quality Reporting & Compliance,Does the organization regularly generate reports on the state of data quality?
-Data Quality,Data Quality Reporting & Compliance,Are data quality issues tracked and reported to senior management?
-Data Quality,Data Quality Reporting & Compliance,Is there a clear process for escalating data quality issues that have a significant impact on business operations?
-Data Quality,Data Quality Reporting & Compliance,Does the organization comply with regulatory or industry standards regarding data quality?
-Data Quality,Data Quality Governance & Management,Is there a formal data quality framework or policy in place?
-Data Quality,Data Quality Governance & Management,Is data quality governance assigned to a specific team or role within the organization?
-Data Quality,Data Quality Governance & Management,Are data quality metrics defined and regularly monitored?
-Data Quality,Data Quality Governance & Management,Does the organization have defined processes for identifying and addressing data quality issues?
-Data Quality,Data Quality Governance & Management,Are there clearly defined data quality standards that apply to all data?
+category,subcategory,question,options
+Data Quality,Data Accuracy ,Is there a process in place to validate the accuracy of incoming data at the point of entry?,"1,2,3,4,5"
+Data Quality,Data Accuracy ,Are there regular audits conducted to assess the accuracy of critical data?,"1,2,3,4,5"
+Data Quality,Data Accuracy ,Does the organization have procedures for correcting inaccuracies once identified?,"1,2,3,4,5"
+Data Quality,Data Accuracy ,"Is there a consistent standard for defining ""accuracy"" across all data sets?","1,2,3,4,5"
+Data Quality,Data Accuracy ,Do you use automated tools to flag and correct errors in data?,"1,2,3,4,5"
+Data Quality,Data Completeness,Is there a data quality framework that defines acceptable levels of data completeness for key business processes?,"1,2,3,4,5"
+Data Quality,Data Completeness,Are there mechanisms in place to track and manage missing or incomplete data?,"1,2,3,4,5"
+Data Quality,Data Completeness,Is data completeness routinely monitored for all critical datasets?,"1,2,3,4,5"
+Data Quality,Data Completeness,Are stakeholders aware of the consequences of incomplete data on business decisions?,"1,2,3,4,5"
+Data Quality,Data Completeness,Do you regularly perform gap analysis to ensure all necessary data fields are captured?,"1,2,3,4,5"
+Data Quality,Data Consistency,"Are there clear guidelines for maintaining consistency in data formats (e.g., date formats, currency)?","1,2,3,4,5"
+Data Quality,Data Consistency,Is there a mechanism to resolve inconsistencies between different data sources?,"1,2,3,4,5"
+Data Quality,Data Consistency,Are data consistency checks performed automatically across systems and platforms?,"1,2,3,4,5"
+Data Quality,Data Consistency,Is there a designated role or team responsible for maintaining data consistency across the organization?,"1,2,3,4,5"
+Data Quality,Data Consistency,Does the organization monitor data consistency regularly through cross-system validation processes?,"1,2,3,4,5"
+Data Quality,Data Reliability,Does the organization validate data sources to ensure they are reliable and trustworthy?,"0,1,2,3,4,5"
+Data Quality,Data Reliability,Are data errors tracked and resolved to improve the reliability of data over time?,"0,1,2,3,4,5"
+Data Quality,Data Reliability,Is there a documented process for assessing the reliability of third-party data sources?,"0,1,2,3,4,5"
+Data Quality,Data Reliability,"Is the data management system configured to ensure redundancy, avoiding data loss?","0,1,2,3,4,5"
+Data Quality,Data Quality Improvement & Training,Does the organization provide training and awareness programs to staff on the importance of data quality?,"0,1,2,3,4,5"
+Data Quality,Data Quality Improvement & Training,Are there mechanisms to collect feedback on data quality from users and stakeholders?,"0,1,2,3,4,5"
+Data Quality,Data Quality Improvement & Training,Does the organization have a structured process to continuously improve data quality over time?,"0,1,2,3,4,5"
+Data Quality,Data Quality Improvement & Training,Are there incentives or measures in place to promote the maintenance of high data quality?,"0,1,2,3,4,5"
+Data Quality,Data Quality Technology & Tools,Does the organization use automated tools or software to monitor data quality?,"0,1,2,3,4,5"
+Data Quality,Data Quality Technology & Tools,Are data quality management tools integrated with other data management systems?,"0,1,2,3,4,5"
+Data Quality,Data Quality Technology & Tools,Are the data quality tools up-to-date and regularly reviewed for improvement?,"0,1,2,3,4,5"
+Data Quality,Data Quality Technology & Tools,Is there a process to evaluate and implement new data quality technologies or solutions?,"0,1,2,3,4,5"
+Data Quality,Data Quality Reporting & Compliance,Does the organization regularly generate reports on the state of data quality?,"0,1,2,3,4,5"
+Data Quality,Data Quality Reporting & Compliance,Are data quality issues tracked and reported to senior management?,"0,1,2,3,4,5"
+Data Quality,Data Quality Reporting & Compliance,Is there a clear process for escalating data quality issues that have a significant impact on business operations?,"0,1,2,3,4,5"
+Data Quality,Data Quality Reporting & Compliance,Does the organization comply with regulatory or industry standards regarding data quality?,"0,1,2,3,4,5"
+Data Quality,Data Quality Governance & Management,Is there a formal data quality framework or policy in place?,"0,1,2,3,4,5"
+Data Quality,Data Quality Governance & Management,Is data quality governance assigned to a specific team or role within the organization?,"0,1,2,3,4,5"
+Data Quality,Data Quality Governance & Management,Are data quality metrics defined and regularly monitored?,"0,1,2,3,4,5"
+Data Quality,Data Quality Governance & Management,Does the organization have defined processes for identifying and addressing data quality issues?,"0,1,2,3,4,5"
+Data Quality,Data Quality Governance & Management,Are there clearly defined data quality standards that apply to all data?,"0,1,2,3,4,5"

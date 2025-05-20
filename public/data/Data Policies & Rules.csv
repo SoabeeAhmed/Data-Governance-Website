@@ -1,25 +1,25 @@
-category,subcategory,question
-Data Policies & Rules,Data Policy Development & Alignment,How are data policies defined within the organization?
-Data Policies & Rules,Data Policy Development & Alignment,Do the policies align with the organization's goals and regulatory requirements?
-Data Policies & Rules,Data Policy Development & Alignment,Is there a documented data governance policy in place?
-Data Policies & Rules,Data Policy Development & Alignment,Are data governance policies reviewed and updated on a regular basis?
-Data Policies & Rules,Data Policy Development & Alignment,Does the data governance policy include clear roles and responsibilities for data management?
-Data Policies & Rules,Data Policy Development & Alignment,Is the data regularly accessed or used for analysis?
-Data Policies & Rules,Data Governance Council,"Does the Data Governance Council have a formal charter that outlines its decision-making authority, roles, and accountability across pharma functions?"
-Data Policies & Rules,Data Governance Council,"Are representatives from IT, Legal, Quality, and other key business units actively involved to ensure a comprehensive approach to data governance?"
-Data Policies & Rules,Data Governance Council,"Is there a documented process for the council to review and approve new data initiatives, technology investments, or changes in data policies?"
-Data Policies & Rules,Data Governance Council,Does the council regularly track and assess key performance indicators (KPIs) to measure the effectiveness of data governance practices?
-Data Policies & Rules,Data Governance Council,"Are meeting records, including minutes and action items, maintained and reviewed to ensure continuous improvement in governance strategies?"
-Data Policies & Rules,Data Governance Council,Does the council provide strategic guidance that aligns data governance priorities with both short-term operational needs and long-term regulatory changes?
-Data Policies & Rules,Data Governance Council,"Is there a dedicated subcommittee within the council focused on data quality, responsible for setting thresholds and monitoring continuous improvement?"
-Data Policies & Rules,Data Governance Council,"Does the council have formal, scheduled review cycles to reassess and update data governance strategies in response to emerging risks and regulatory changes?"
-Data Policies & Rules,Data Governance Processes,Are end-to-end procedures for the data lifecycle - from generation and validation to storage and archival - clearly documented for all pharma operations?
-Data Policies & Rules,Data Governance Processes,Is there a standard methodology for validating data integrity and ensuring traceability throughout the entire data lifecycle?
-Data Policies & Rules,Data Governance Processes,"Do the processes include clearly defined steps for addressing data quality issues, including remediation and root cause analysis?"
-Data Policies & Rules,Data Governance Processes,Are automated monitoring tools integrated into the processes to detect data anomalies and trigger real-time alerts?
-Data Policies & Rules,Data Governance Processes,Is there a formal change management protocol to ensure that updates to processes are seamlessly integrated without disrupting operations?
-Data Policies & Rules,Data Governance Processes,How are interdependencies among various data systems managed to maintain consistency and compliance across the organization?
-Data Policies & Rules,Data Governance Processes,"Are escalation procedures clearly defined for critical data governance issues, ensuring swift resolution of compliance breaches or quality lapses?"
-Data Policies & Rules,Data Governance Processes,Does the organization conduct regular reviews of its data governance processes to benchmark performance and adapt to evolving regulatory requirements?
-Data Policies & Rules,Data Governance Processes,Do governance processes incorporate structured feedback loops from operational teams and frontline users to identify and rectify process gaps?
-Data Policies & Rules,Data Governance Processes,Are there clear protocols for managing and resolving conflicts or discrepancies between data sources across various pharma functions?
+category,subcategory,question,options
+Data Policies & Rules,Data Policy Development & Alignment,How are data policies defined within the organization?,"0,1,2,3,4,5"
+Data Policies & Rules,Data Policy Development & Alignment,Do the policies align with the organization's goals and regulatory requirements?,"0,1,2,3,4,5"
+Data Policies & Rules,Data Policy Development & Alignment,Is there a documented data governance policy in place?,"0,1,2,3,4,5"
+Data Policies & Rules,Data Policy Development & Alignment,Are data governance policies reviewed and updated on a regular basis?,"0,1,2,3,4,5"
+Data Policies & Rules,Data Policy Development & Alignment,Does the data governance policy include clear roles and responsibilities for data management?,"0,1,2,3,4,5"
+Data Policies & Rules,Data Policy Development & Alignment,Is the data regularly accessed or used for analysis?,"0,1,2,3,4,5"
+Data Policies & Rules,Data Governance Council,"Does the Data Governance Council have a formal charter that outlines its decision-making authority, roles, and accountability across pharma functions?","0,1,2,3,4,5"
+Data Policies & Rules,Data Governance Council,"Are representatives from IT, Legal, Quality, and other key business units actively involved to ensure a comprehensive approach to data governance?","0,1,2,3,4,5"
+Data Policies & Rules,Data Governance Council,"Is there a documented process for the council to review and approve new data initiatives, technology investments, or changes in data policies?","0,1,2,3,4,5"
+Data Policies & Rules,Data Governance Council,Does the council regularly track and assess key performance indicators (KPIs) to measure the effectiveness of data governance practices?,"0,1,2,3,4,5"
+Data Policies & Rules,Data Governance Council,"Are meeting records, including minutes and action items, maintained and reviewed to ensure continuous improvement in governance strategies?","0,1,2,3,4,5"
+Data Policies & Rules,Data Governance Council,Does the council provide strategic guidance that aligns data governance priorities with both short-term operational needs and long-term regulatory changes?,"0,1,2,3,4,5"
+Data Policies & Rules,Data Governance Council,"Is there a dedicated subcommittee within the council focused on data quality, responsible for setting thresholds and monitoring continuous improvement?","0,1,2,3,4,5"
+Data Policies & Rules,Data Governance Council,"Does the council have formal, scheduled review cycles to reassess and update data governance strategies in response to emerging risks and regulatory changes?","0,1,2,3,4,5"
+Data Policies & Rules,Data Governance Processes,Are end-to-end procedures for the data lifecycle - from generation and validation to storage and archival - clearly documented for all pharma operations?,"0,1,2,3,4,5"
+Data Policies & Rules,Data Governance Processes,Is there a standard methodology for validating data integrity and ensuring traceability throughout the entire data lifecycle?,"0,1,2,3,4,5"
+Data Policies & Rules,Data Governance Processes,"Do the processes include clearly defined steps for addressing data quality issues, including remediation and root cause analysis?","0,1,2,3,4,5"
+Data Policies & Rules,Data Governance Processes,Are automated monitoring tools integrated into the processes to detect data anomalies and trigger real-time alerts?,"0,1,2,3,4,5"
+Data Policies & Rules,Data Governance Processes,Is there a formal change management protocol to ensure that updates to processes are seamlessly integrated without disrupting operations?,"0,1,2,3,4,5"
+Data Policies & Rules,Data Governance Processes,How are interdependencies among various data systems managed to maintain consistency and compliance across the organization?,"0,1,2,3,4,5"
+Data Policies & Rules,Data Governance Processes,"Are escalation procedures clearly defined for critical data governance issues, ensuring swift resolution of compliance breaches or quality lapses?","0,1,2,3,4,5"
+Data Policies & Rules,Data Governance Processes,Does the organization conduct regular reviews of its data governance processes to benchmark performance and adapt to evolving regulatory requirements?,"0,1,2,3,4,5"
+Data Policies & Rules,Data Governance Processes,Do governance processes incorporate structured feedback loops from operational teams and frontline users to identify and rectify process gaps?,"0,1,2,3,4,5"
+Data Policies & Rules,Data Governance Processes,Are there clear protocols for managing and resolving conflicts or discrepancies between data sources across various pharma functions?,"0,1,2,3,4,5"

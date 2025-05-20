@@ -1,24 +1,24 @@
-category,subcategory,question
-Data Procurement,Data Source Identification,Are the internal and external sources currently providing data?
-Data Procurement,Data Source Identification,Has a background check or due diligence been conducted on the provider?
-Data Procurement,Data Source Identification,"Is the data format compatible with our systems (CSV, JSON, APIs, etc.)?"
-Data Procurement,Data Source Identification,Has the data been tested for consistency and reliability over time?
-Data Procurement,Data Source Identification,"Are data usage rights, licensing terms, and restrictions clearly defined?"
-Data Procurement,Data Source Identification,Does the provider offer industry-specific or domain-specific datasets?
-Data Procurement,Vendor Selection & Evaluation,Is there flexibility or tiered pricing based on data usage or user volume?
-Data Procurement,Vendor Selection & Evaluation,"Is the license for single-use, multi-use, or enterprise-wide access?"
-Data Procurement,Vendor Selection & Evaluation,Does the vendor provide 24/7 support or only during business hours?
-Data Procurement,Vendor Selection & Evaluation,Does the SLA include provisions for data accuracy and freshness?
-Data Procurement,Vendor Selection & Evaluation,Has a structured RFP or RFI process been conducted for transparency?
-Data Procurement,Contract Negotiation,Are there any restrictions on sharing the data across departments or regions?
-Data Procurement,Contract Negotiation,Are we purchasing the data outright or licensing it?
-Data Procurement,Contract Negotiation,Has the need been validated by business/data stakeholders?
-Data Procurement,Contract Negotiation,Is technical support available post-acquisition?
-Data Procurement,Data Acquisition ,Is there a defined ROI or value metric associated with acquiring this data?
-Data Procurement,Data Acquisition ,Are we purchasing the data outright or licensing it?
-Data Procurement,Data Acquisition ,Has the need been validated by business/data stakeholders?
-Data Procurement,Data Acquisition ,Is technical support available post-acquisition?
-Data Procurement,Renewal or Termination,Is the vendor responsive and timely in resolving issues?
-Data Procurement,Renewal or Termination,"Does the renewal offer better terms, pricing, or expanded access?"
-Data Procurement,Renewal or Termination,Are there opportunities to renegotiate based on actual usage or performance?
-Data Procurement,Renewal or Termination,"Has the data become obsolete, redundant, or replaced by better sources?"
+category,subcategory,question,options
+Data Procurement,Data Source Identification,Are the internal and external sources currently providing data?,"0,1,2,3,4,5"
+Data Procurement,Data Source Identification,Has a background check or due diligence been conducted on the provider?,"0,1,2,3,4,5"
+Data Procurement,Data Source Identification,"Is the data format compatible with our systems (CSV, JSON, APIs, etc.)?","0,1,2,3,4,5"
+Data Procurement,Data Source Identification,Has the data been tested for consistency and reliability over time?,"0,1,2,3,4,5"
+Data Procurement,Data Source Identification,"Are data usage rights, licensing terms, and restrictions clearly defined?","0,1,2,3,4,5"
+Data Procurement,Data Source Identification,Does the provider offer industry-specific or domain-specific datasets?,"0,1,2,3,4,5"
+Data Procurement,Vendor Selection & Evaluation,Is there flexibility or tiered pricing based on data usage or user volume?,"0,1,2,3,4,5"
+Data Procurement,Vendor Selection & Evaluation,"Is the license for single-use, multi-use, or enterprise-wide access?","0,1,2,3,4,5"
+Data Procurement,Vendor Selection & Evaluation,Does the vendor provide 24/7 support or only during business hours?,"0,1,2,3,4,5"
+Data Procurement,Vendor Selection & Evaluation,Does the SLA include provisions for data accuracy and freshness?,"0,1,2,3,4,5"
+Data Procurement,Vendor Selection & Evaluation,Has a structured RFP or RFI process been conducted for transparency?,"0,1,2,3,4,5"
+Data Procurement,Contract Negotiation,Are there any restrictions on sharing the data across departments or regions?,"0,1,2,3,4,5"
+Data Procurement,Contract Negotiation,Are we purchasing the data outright or licensing it?,"0,1,2,3,4,5"
+Data Procurement,Contract Negotiation,Has the need been validated by business/data stakeholders?,"0,1,2,3,4,5"
+Data Procurement,Contract Negotiation,Is technical support available post-acquisition?,"0,1,2,3,4,5"
+Data Procurement,Data Acquisition ,Is there a defined ROI or value metric associated with acquiring this data?,"0,1,2,3,4,5"
+Data Procurement,Data Acquisition ,Are we purchasing the data outright or licensing it?,"0,1,2,3,4,5"
+Data Procurement,Data Acquisition ,Has the need been validated by business/data stakeholders?,"0,1,2,3,4,5"
+Data Procurement,Data Acquisition ,Is technical support available post-acquisition?,"0,1,2,3,4,5"
+Data Procurement,Renewal or Termination,Is the vendor responsive and timely in resolving issues?,"0,1,2,3,4,5"
+Data Procurement,Renewal or Termination,"Does the renewal offer better terms, pricing, or expanded access?","0,1,2,3,4,5"
+Data Procurement,Renewal or Termination,Are there opportunities to renegotiate based on actual usage or performance?,"0,1,2,3,4,5"
+Data Procurement,Renewal or Termination,"Has the data become obsolete, redundant, or replaced by better sources?","0,1,2,3,4,5"

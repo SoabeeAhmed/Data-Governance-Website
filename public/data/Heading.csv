@@ -1,4 +1,4 @@
-icon,category,subcategory,options
+icon,category,subcategory,legend
 fa-star,Data Quality,Data Accuracy,"1-Unaware/Initial (level 1),2-Aware/Managed (level 2),3-Defined/Developing (level 3),4-Implemented/Quantitatively Managed (level 4),5-Optimized/Governance Mastery (level 5)"
 fa-star,Data Quality,Data Completeness,"1-Unaware/Initial (level 1),2-Aware/Managed (level 2),3-Defined/Developing (level 3),4-Implemented/Quantitatively Managed (level 4),5-Optimized/Governance Mastery (level 5)"
 fa-star,Data Quality,Data Consistency,"1-Unaware/Initial (level 1),2-Aware/Managed (level 2),3-Defined/Developing (level 3),4-Implemented/Quantitatively Managed (level 4),5-Optimized/Governance Mastery (level 5)"

@@ -8,6 +8,7 @@ interface CategoryData {
   [category: string]: {
     icon: string;
     subcategories: string[];
+    legends: { [subcategory: string]: string }; // Updated to support legend per subcategory
   };
 }
 
@@ -19,8 +20,9 @@ const App: React.FC = () => {
   const [definition, setDefinition] = useState<string | null>(null);
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [activeSubcategory, setActiveSubcategory] = useState<string | null>(null);
+  const [activeLegend, setActiveLegend] = useState<string | null>(null);
 
-  // Load categories and subcategories from Heading.csv
+  // Load categories, subcategories, and legends from Heading.csv
   useEffect(() => {
     setIsLoading(true);
     setError(null);
@@ -42,16 +44,18 @@ const App: React.FC = () => {
         const result: CategoryData = {};
 
         parsed.data.forEach((row: any) => {
-          const iconRaw = row["icon"]?.trim();
+          const icon = row["icon"]?.trim();
           const category = row["category"]?.trim();
           const subcategory = row["subcategory"]?.trim();
+          const legend = row["legend"]?.trim();
 
-          if (!iconRaw || !category) return;
+          if (!icon || !category) return;
 
           if (!result[category]) {
             result[category] = {
-              icon: iconRaw,
+              icon: icon,
               subcategories: [],
+              legends: {},
             };
           }
 
@@ -61,6 +65,10 @@ const App: React.FC = () => {
             !result[category].subcategories.includes(subcategory)
           ) {
             result[category].subcategories.push(subcategory);
+          }
+
+          if (subcategory && legend) {
+            result[category].legends[subcategory] = legend;
           }
         });
 
@@ -75,13 +83,16 @@ const App: React.FC = () => {
       });
   }, []);
 
-  // Load questions for selected category + subcategory
   const handleSubcategoryClick = (category: string, subcategory: string) => {
     setActiveCategory(category);
     setActiveSubcategory(subcategory);
     setDefinition(null);
     setQuestions([]);
     setError(null);
+
+    // Set legend dynamically based on both category and subcategory
+    const legend = categories[category]?.legends?.[subcategory] || null;
+    setActiveLegend(legend);
 
     const categoryFile = `/data/${category}.csv`;
 
@@ -131,7 +142,6 @@ const App: React.FC = () => {
   };
 
   return (
-
     <div className="app-container">
       <Sidebar
         categories={categories}
@@ -145,22 +155,28 @@ const App: React.FC = () => {
           <h1 className="text-2xl font-bold mb-4">Data Quality Index</h1>
         </div>
         <div className="content-body">
+          {error && <p className="error mb-4">{error}</p>}
 
-        {error && <p className="error mb-4">{error}</p>}
+          {activeCategory && activeSubcategory && (
+            <>
+              <h2 className="text-xl font-semibold mb-2">
+                {activeCategory} / {activeSubcategory}
+              </h2>
 
-        {activeCategory && activeSubcategory && (
-          <>
-            <h2 className="text-xl font-semibold mb-2">
-              {activeCategory} / {activeSubcategory}
-            </h2>
+              {activeLegend && (
+                <div className="legend mb-4">
+                  <h3 className="text-lg font-semibold">Legend</h3>
+                  <p>{activeLegend}</p>
+                </div>
+              )}
 
-            {questions.length > 0 ? (
-              <SubcategoryQuestions questions={questions} definition={definition} />
-            ) : (
-              <p className="text-gray-500 italic">No questions available.</p>
-            )}
-          </>
-        )}
+              {questions.length > 0 ? (
+                <SubcategoryQuestions questions={questions} definition={definition} />
+              ) : (
+                <p className="text-gray-500 italic">No questions available.</p>
+              )}
+            </>
+          )}
         </div>
       </main>
     </div>

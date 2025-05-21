@@ -1,37 +1,128 @@
 import React, { useState, useEffect } from "react";
 import QuestionItem from "./QuestionItem";
 
+interface Question {
+  id: number;
+  text: string;
+  options: number[];
+}
+
 interface SubcategoryQuestionsProps {
-  questions: string[]; // Questions list
+  questions: Question[];
   definition: string | null;
   onReturn: () => void;
+  activeCategory: string;
+  activeSubcategory: string;
+}
+
+// Define a type for storing answers by category and subcategory
+interface AnswersStore {
+  [category: string]: {
+    [subcategory: string]: {
+      [questionIndex: number]: number;
+    };
+  };
 }
 
 const SubcategoryQuestions: React.FC<SubcategoryQuestionsProps> = ({
   questions,
   definition,
   onReturn,
+  activeCategory,
+  activeSubcategory,
 }) => {
-  const [answers, setAnswers] = useState<{ [index: number]: number }>({});
+  // Store all answers across all categories/subcategories
+  const [allAnswers, setAllAnswers] = useState<AnswersStore>({});
+  // Current active answers for the displayed subcategory
+  const [currentAnswers, setCurrentAnswers] = useState<{ [index: number]: number }>({});
   const [averageScore, setAverageScore] = useState<number>(0);
 
+  // Load previously saved answers from localStorage when component mounts
   useEffect(() => {
-    // Calculate total score and total answered questions
-    const totalScore = Object.values(answers).reduce((acc, score) => acc + score, 0);
-    const answeredCount = Object.keys(answers).length;
-    const totalQuestions = questions.length;
+    const savedAnswersStr = localStorage.getItem("dataQualityAssessmentAnswers");
+    if (savedAnswersStr) {
+      try {
+        const savedAnswers = JSON.parse(savedAnswersStr);
+        setAllAnswers(savedAnswers);
+      } catch (err) {
+        console.error("Error loading saved answers", err);
+      }
+    }
+  }, []);
+
+  // Update current answers when activeCategory/subcategory changes
+  useEffect(() => {
+    // Load answers for the current category/subcategory
+    if (allAnswers[activeCategory]?.[activeSubcategory]) {
+      setCurrentAnswers(allAnswers[activeCategory][activeSubcategory]);
+    } else {
+      setCurrentAnswers({});
+    }
+  }, [activeCategory, activeSubcategory, allAnswers]);
+
+  // Calculate average score whenever currentAnswers changes
+  useEffect(() => {
+    const totalScore = Object.values(currentAnswers).reduce((acc, score) => acc + score, 0);
+    const answeredCount = Object.keys(currentAnswers).length;
     const score = answeredCount > 0 ? totalScore / answeredCount : 0;
+    setAverageScore(score);
+  }, [currentAnswers]);
 
-    setAverageScore(score); // Update the average score
+  // Save data to localStorage when unmounting
+  useEffect(() => {
+    return () => {
+      if (Object.keys(currentAnswers).length > 0) {
+        // Save average score to dataQualityAssessmentSubmitted
+        const submittedDataStr = localStorage.getItem("dataQualityAssessmentSubmitted");
+        const existingData = submittedDataStr ? JSON.parse(submittedDataStr) : [];
 
-    // Optional: You could display how many questions were answered and the total number of questions
-  }, [answers, questions.length]);
+        const updatedData = [
+          ...existingData.filter(
+            (entry: any) =>
+              !(
+                entry.category === activeCategory &&
+                entry.subcategory === activeSubcategory
+              )
+          ),
+          {
+            category: activeCategory,
+            subcategory: activeSubcategory,
+            averageScore: parseFloat(averageScore.toFixed(1)),
+          },
+        ];
+
+        localStorage.setItem("dataQualityAssessmentSubmitted", JSON.stringify(updatedData));
+      }
+    };
+  }, [averageScore, activeCategory, activeSubcategory, currentAnswers]);
 
   const handleAnswerChange = (index: number, value: number) => {
-    setAnswers((prev) => ({
+    // Update current answers for display
+    setCurrentAnswers((prev) => ({
       ...prev,
       [index]: value,
     }));
+
+    // Update all answers in the store
+    setAllAnswers((prev) => {
+      const updated = { ...prev };
+      
+      // Create category and subcategory objects if they don't exist
+      if (!updated[activeCategory]) {
+        updated[activeCategory] = {};
+      }
+      if (!updated[activeCategory][activeSubcategory]) {
+        updated[activeCategory][activeSubcategory] = {};
+      }
+      
+      // Set the answer
+      updated[activeCategory][activeSubcategory][index] = value;
+      
+      // Save to localStorage
+      localStorage.setItem("dataQualityAssessmentAnswers", JSON.stringify(updated));
+      
+      return updated;
+    });
   };
 
   return (
@@ -43,9 +134,9 @@ const SubcategoryQuestions: React.FC<SubcategoryQuestionsProps> = ({
         </div>
       )}
 
-      <div className="mt-6">
+      <div className="mt-6 mb-6">
         <h3 className="text-lg font-semibold">
-          Questions Attempted: {Object.keys(answers).length} / {questions.length}
+          Questions Attempted: {Object.keys(currentAnswers).length} / {questions.length}
         </h3>
         <h3 className="text-lg font-semibold">
           Average Score: {averageScore.toFixed(1)} / 5
@@ -55,10 +146,11 @@ const SubcategoryQuestions: React.FC<SubcategoryQuestionsProps> = ({
       {questions.length > 0 ? (
         questions.map((q, idx) => (
           <QuestionItem
-            key={idx}
+            key={q.id}
             index={idx}
-            question={q}
-            value={answers[idx] || 0}
+            question={q.text}
+            options={q.options}
+            value={currentAnswers[idx]}
             onChange={handleAnswerChange}
           />
         ))

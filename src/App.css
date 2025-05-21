@@ -176,6 +176,43 @@ ul {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
 }
 
+.question-card .flex {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.custom-radio {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.custom-radio input[type="radio"] {
+  display: none;
+}
+
+.custom-radio span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border: 2px solid #999;
+  border-radius: 50%;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.custom-radio input[type="radio"]:checked + span {
+  background-color: #3b82f6; /* Tailwind's blue-500 */
+  color: white;
+  border-color: #3b82f6;
+}
+
+
 
 .sidebar::-webkit-scrollbar {
   display: none;
@@ -540,3 +577,29 @@ ul {
     grid-template-columns: 1fr;
   }
 }
+
+/* .custom-radio input[type="radio"] {
+  display: none;
+}
+
+.custom-radio span {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-right: 110px;
+}
+
+.custom-radio input[type="radio"]:checked + span {
+  background-color: #3b82f6; 
+  border-color: #3b82f6;
+  color: white;
+} */

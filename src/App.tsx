@@ -141,7 +141,7 @@ const App: React.FC = () => {
   const handleAssessmentSubmit = (score: number) => {
     if (!activeCategory || !activeSubcategory) return;
 
-    // Update the categoryScores state with the score for the specific subcategory
+  
     setCategoryScores((prevScores) => {
       const newScores = { ...prevScores };
 
@@ -149,13 +149,13 @@ const App: React.FC = () => {
         newScores[activeCategory] = {};
       }
 
-      // Store score for the specific subcategory
+      
       newScores[activeCategory][activeSubcategory] = score;
 
       return newScores;
     });
 
-    // Update local storage
+
     const key = "dataQualityAssessmentSubmitted";
     const current = localStorage.getItem(key);
     let updated: AssessmentEntry[] = [];
@@ -163,7 +163,7 @@ const App: React.FC = () => {
     if (current) {
       try {
         updated = JSON.parse(current);
-        // Remove existing entry for this category/subcategory if it exists
+        
         updated = updated.filter(
           (e) => !(e.category === activeCategory && e.subcategory === activeSubcategory)
         );
@@ -172,7 +172,7 @@ const App: React.FC = () => {
       }
     }
 
-    // Add the new entry
+    
     updated.push({
       category: activeCategory,
       subcategory: activeSubcategory,

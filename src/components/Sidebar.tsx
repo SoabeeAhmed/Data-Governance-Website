@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
 import * as Icons from "@fortawesome/free-solid-svg-icons";
-
+import { faCircleUser } from "@fortawesome/free-solid-svg-icons";
 interface SidebarProps {
   categories: {
     [category: string]: {
@@ -39,7 +39,15 @@ const Sidebar: React.FC<SidebarProps> = ({
 
   return (
     <aside className="sidebar">
-      <h2 className="text-lg font-bold mb-4">Hello User</h2>
+      
+      {/* <h2 className="text-lg font-bold mb-4">
+        <FontAwesomeIcon icon={faCircleUser} className="mr-10" />
+          Hello User</h2> */}
+          <h2 className="text-lg font-bold mb-4">
+  <FontAwesomeIcon icon={faCircleUser} style={{ marginRight: "10px" }} />
+  Hello User
+</h2>
+
 
       {isLoading && (
         <div className="loading flex items-center">

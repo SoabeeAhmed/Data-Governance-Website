@@ -877,3 +877,20 @@ ul {
 .legend-left div {
   margin-bottom: 0.25rem; /* Optional: add space between the letters "L", "E", etc. */
 }
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.back-button {
+  /* Positioning the back button to the top-left */
+  margin-left: 0; /* Ensures it stays at the left side */
+}
+
+.reset-button {
+  /* Positioning the reset button to the top-right */
+  margin-right: 0; /* Ensures it stays at the right side */
+}

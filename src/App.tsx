@@ -141,7 +141,6 @@ const App: React.FC = () => {
   const handleAssessmentSubmit = (score: number) => {
     if (!activeCategory || !activeSubcategory) return;
 
-  
     setCategoryScores((prevScores) => {
       const newScores = { ...prevScores };
 
@@ -149,12 +148,10 @@ const App: React.FC = () => {
         newScores[activeCategory] = {};
       }
 
-      
       newScores[activeCategory][activeSubcategory] = score;
 
       return newScores;
     });
-
 
     const key = "dataQualityAssessmentSubmitted";
     const current = localStorage.getItem(key);
@@ -172,7 +169,6 @@ const App: React.FC = () => {
       }
     }
 
-    
     updated.push({
       category: activeCategory,
       subcategory: activeSubcategory,
@@ -230,29 +226,19 @@ const App: React.FC = () => {
           )}
 
           {activeCategory && activeSubcategory && (
-            <div>
-              <div className="flex justify-between items-center mb-4">
-                <button
-                  className="back-button"
-                  onClick={() => {
-                    setActiveCategory(null);
-                    setActiveSubcategory(null);
-                    loadDashboardScores();
-                  }}
-                >
-                  ← Back to Dashboard
-                </button>
-              </div>
-
-              <SubcategoryQuestions
-                questions={questions}
-                definition={definition}
-                legend={activeLegend}
-                onSubmit={handleAssessmentSubmit}
-                activeCategory={activeCategory}
-                activeSubcategory={activeSubcategory}
-              />
-            </div>
+            <SubcategoryQuestions
+              questions={questions}
+              definition={definition}
+              legend={activeLegend}
+              onSubmit={handleAssessmentSubmit}
+              activeCategory={activeCategory}
+              activeSubcategory={activeSubcategory}
+              onBackToDashboard={() => {
+                setActiveCategory(null);
+                setActiveSubcategory(null);
+                loadDashboardScores();
+              }}
+            />
           )}
         </div>
       </main>

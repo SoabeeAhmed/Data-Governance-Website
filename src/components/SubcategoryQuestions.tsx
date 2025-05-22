@@ -11,7 +11,8 @@ interface SubcategoryQuestionsProps {
   questions: Question[];
   definition: string | null;
   legend: string | null;
-  onReturn: () => void;
+  onBackToDashboard: () => void;
+  onSubmit: (score: number) => void;
   activeCategory: string;
   activeSubcategory: string;
 }
@@ -28,7 +29,8 @@ const SubcategoryQuestions: React.FC<SubcategoryQuestionsProps> = ({
   questions,
   definition,
   legend,
-  onReturn,
+  onBackToDashboard,
+  onSubmit,
   activeCategory,
   activeSubcategory,
 }) => {
@@ -62,32 +64,6 @@ const SubcategoryQuestions: React.FC<SubcategoryQuestionsProps> = ({
     const score = answeredCount > 0 ? totalScore / answeredCount : 0;
     setAverageScore(score);
   }, [currentAnswers]);
-
-  useEffect(() => {
-    return () => {
-      if (Object.keys(currentAnswers).length > 0) {
-        const submittedDataStr = localStorage.getItem("dataQualityAssessmentSubmitted");
-        const existingData = submittedDataStr ? JSON.parse(submittedDataStr) : [];
-
-        const updatedData = [
-          ...existingData.filter(
-            (entry: any) =>
-              !(
-                entry.category === activeCategory &&
-                entry.subcategory === activeSubcategory
-              )
-          ),
-          {
-            category: activeCategory,
-            subcategory: activeSubcategory,
-            averageScore: parseFloat(averageScore.toFixed(1)),
-          },
-        ];
-
-        localStorage.setItem("dataQualityAssessmentSubmitted", JSON.stringify(updatedData));
-      }
-    };
-  }, [averageScore, activeCategory, activeSubcategory, currentAnswers]);
 
   const handleAnswerChange = (index: number, value: number) => {
     setCurrentAnswers((prev) => ({
@@ -147,8 +123,26 @@ const SubcategoryQuestions: React.FC<SubcategoryQuestionsProps> = ({
 
   const legendItems = legend ? parseLegend(legend) : [];
 
+  const handleReset = () => {
+    const newAnswers = { ...allAnswers };
+    delete newAnswers[activeCategory]?.[activeSubcategory];
+    setAllAnswers(newAnswers);
+    setCurrentAnswers({});
+    localStorage.setItem("dataQualityAssessmentAnswers", JSON.stringify(newAnswers));
+  };
+
   return (
     <div className="p-4 bg-white shadow rounded">
+      <div className="button-container flex justify-between mb-4">
+        <button className="back-button" onClick={onBackToDashboard}>
+          ← Back to Dashboard
+        </button>
+        <button className="reset-button bg-red-500 text-white py-2 px-4 rounded" onClick={handleReset}>
+          Reset Subcategory
+        </button>
+      </div>
+
+
       <div className="flex-row-container">
         <h2 className="mb-4">
           {activeCategory} / {activeSubcategory}
@@ -166,14 +160,7 @@ const SubcategoryQuestions: React.FC<SubcategoryQuestionsProps> = ({
       {/* Display Legend */}
       {legendItems.length > 0 && (
         <div className="legend-container mb-6 flex justify-between items-center">
-          <div className="legend-left text-xs font-bold flex flex-col">
-            {/* <div>L</div>
-            <div>E</div>
-            <div>G</div>
-            <div>E</div>
-            <div>N</div>
-            <div>D</div> */}
-          </div>
+          <div className="legend-left text-xs font-bold flex flex-col"></div>
 
           {/* Right side: Display the legend items */}
           <div className="legend-right flex gap-8">
@@ -182,7 +169,7 @@ const SubcategoryQuestions: React.FC<SubcategoryQuestionsProps> = ({
                 <div
                   className={`legend-circle ${getLegendColorClass(item.level)} w-6 h-6 rounded-full`}
                 ></div>
-                <span className="legend-text text-sm">{`${item.level}-${item.label}`}</span> {/* Formatting as 1-Unaware */}
+                <span className="legend-text text-sm">{`${item.level}-${item.label}`}</span>
               </div>
             ))}
           </div>
@@ -209,3 +196,4 @@ const SubcategoryQuestions: React.FC<SubcategoryQuestionsProps> = ({
 };
 
 export default SubcategoryQuestions;
+

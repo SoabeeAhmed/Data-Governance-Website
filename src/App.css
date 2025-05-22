@@ -582,3 +582,143 @@ ul {
   font-size: 1.125rem;
   font-weight: 600;
 }
+.category-score-card {
+  padding: 1rem;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1rem;
+}
+
+.categoryscore {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem; 
+  height:50px;
+}
+
+.score-small {
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #f3f4f6;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.score-bar-container {
+  width: 100%;
+  height: 8px;
+  background-color: #e5e7eb;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.score-bar {
+  height: 100%;
+  transition: width 0.3s ease;
+  border-radius: 4px;
+}
+
+.score-bar-high {
+  background-color: #4caf50;
+}
+
+.score-bar-medium {
+  background-color: #ff9800;
+}
+
+.score-bar-low {
+  background-color: #f44336;
+}
+
+
+.action-card {
+  position: relative;
+  padding-right: 6rem; /* Add space for button */
+}
+
+/* Shared button style */
+.action-card button {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  background-color: white;
+  border: 1px solid black;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+/* Priority-specific button color */
+.action-high button {
+  color: #dc2626; /* Red-600 */
+  
+}
+
+.action-high button:hover {
+  color: white; /* Red-700 */
+  background-color: #b91c1c;
+}
+
+.action-medium button {
+  color: #d97706; /* Amber-600 */
+}
+
+.action-medium button:hover {
+  color: white; /* Red-700 */
+  background-color: #b45309;
+}
+
+.action-low button {
+  color: #059669; /* Green-600 */
+}
+
+.action-low button:hover {
+  color: white; /* Red-700 */
+  background-color: #047857;
+}
+
+.action-high {
+  border-left:5px solid #dc2626;
+  background-color: rgba(239, 68, 68, 0.1);
+}
+ 
+.action-medium {
+  border-left:5px solid #d97706;
+  background-color: rgba(252, 211, 77, 0.1);
+}
+ 
+.action-low {
+  border-left: 5px solid #059669;
+  background-color: rgba(52, 211, 153, 0.1);
+}
+
+.legend-container {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  /* padding-left: 5px; */
+  border-left: 5px solid #155eaf;
+  border-radius: 4px;
+}
+ 
+ 
+.legend-text {
+  background-color: #a7d3f4;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+ 
+.legend-text h2 {
+  color: #333;  
+  margin-bottom: 5px;
+  margin-left:10px;
+}
+ 
+.legend-text p {
+  color: #151515;  
+  margin-left:10px;
+}

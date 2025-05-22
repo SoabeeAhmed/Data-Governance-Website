@@ -10,6 +10,7 @@ interface Question {
 interface SubcategoryQuestionsProps {
   questions: Question[];
   definition: string | null;
+  legend:string | null;
   onReturn: () => void;
   activeCategory: string;
   activeSubcategory: string;
@@ -26,6 +27,7 @@ interface AnswersStore {
 const SubcategoryQuestions: React.FC<SubcategoryQuestionsProps> = ({
   questions,
   definition,
+  legend,
   onReturn,
   activeCategory,
   activeSubcategory,
@@ -109,13 +111,6 @@ const SubcategoryQuestions: React.FC<SubcategoryQuestionsProps> = ({
 
   return (
     <div className="p-4 bg-white shadow rounded">
-      {definition && (
-        <div className="mb-6">
-          <h2 className="text-xl font-semibold">Definition</h2>
-          <p className="text-gray-700">{definition}</p>
-        </div>
-      )}
-
       <div className="flex-row-container">
         <h2 className="mb-4">
           {activeCategory} / {activeSubcategory}
@@ -129,6 +124,16 @@ const SubcategoryQuestions: React.FC<SubcategoryQuestionsProps> = ({
           </h3>
         </div>
       </div>
+
+      {legend && legend.trim() && (
+      <div className="legend-container mb-6">
+        <div className="legend-ribbon"></div>
+          <div className="legend-text">
+            <h2 className="text-xl font-semibold">Legend</h2>
+            <p className="text-gray-500">{legend}</p>
+          </div>
+      </div>
+      )}
 
       {questions.length > 0 ? (
         questions.map((q, idx) => (

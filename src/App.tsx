@@ -247,6 +247,7 @@ const App: React.FC = () => {
               <SubcategoryQuestions
                 questions={questions}
                 definition={definition}
+                legend={activeLegend}
                 onSubmit={handleAssessmentSubmit}
                 activeCategory={activeCategory}
                 activeSubcategory={activeSubcategory}

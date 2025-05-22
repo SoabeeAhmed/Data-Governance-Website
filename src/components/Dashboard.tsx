@@ -25,7 +25,13 @@ const Dashboard: React.FC<DashboardProps> = ({
 }) => {
   const [overallScore, setOverallScore] = useState<number>(0);
   const [aggregatedCategoryScores, setAggregatedCategoryScores] = useState<{ [key: string]: number }>({});
-  const [recommendedActions, setRecommendedActions] = useState<{ title: string; description: string; priority: string }[]>([]);
+  const [recommendedActions, setRecommendedActions] = useState<{
+    title: string;
+    description: string;
+    priority: string;
+    category?: string;
+    subcategory?: string;
+  }[]>([]);
 
   useEffect(() => {
     calculateScores();
@@ -60,18 +66,24 @@ const Dashboard: React.FC<DashboardProps> = ({
   };
 
   const generateRecommendedActions = () => {
-    const actions: { title: string; description: string; priority: string; category?: string; subcategory?: string }[] = [];
-    
+    const actions: {
+      title: string;
+      description: string;
+      priority: string;
+      category?: string;
+      subcategory?: string;
+    }[] = [];
+
     Object.entries(categoryScores).forEach(([category, subcategories]) => {
       Object.entries(subcategories).forEach(([subcategory, score]) => {
         if (score < 3) {
           const priority = score < 2 ? "high" : "medium";
           actions.push({
             title: `Improve ${subcategory} in ${category}`,
-            description: `Current score is ${score.toFixed(1)}/5. Click to view assessment.`,
+            description: `Current score is ${score.toFixed(1)}/5.`,
             priority,
             category,
-            subcategory
+            subcategory,
           });
         }
       });
@@ -82,22 +94,24 @@ const Dashboard: React.FC<DashboardProps> = ({
         actions.push({
           title: "Start your data quality assessment",
           description: "Complete assessments for at least one subcategory to see recommendations.",
-          priority: "medium"
+          priority: "medium",
         });
       } else {
         actions.push({
           title: "Continue data quality assessment",
           description: "Complete assessments for more subcategories to get better insights.",
-          priority: "medium"
+          priority: "medium",
         });
       }
     }
 
-    const sortedActions = actions.sort((a, b) => {
-      if (a.priority === "high" && b.priority !== "high") return -1;
-      if (a.priority !== "high" && b.priority === "high") return 1;
-      return 0;
-    }).slice(0, 5);
+    const sortedActions = actions
+      .sort((a, b) => {
+        if (a.priority === "high" && b.priority !== "high") return -1;
+        if (a.priority !== "high" && b.priority === "high") return 1;
+        return 0;
+      })
+      .slice(0, 5);
 
     setRecommendedActions(sortedActions);
   };
@@ -110,21 +124,21 @@ const Dashboard: React.FC<DashboardProps> = ({
 
   const getCompletionStats = () => {
     const totalSubcategories = Object.values(categories).reduce(
-      (sum, category) => sum + category.subcategories.length, 
+      (sum, category) => sum + category.subcategories.length,
       0
     );
-    
+
     const completedSubcategories = Object.values(categoryScores).reduce(
       (sum, subcategories) => sum + Object.keys(subcategories).length,
       0
     );
-    
+
     return {
       completed: completedSubcategories,
       total: totalSubcategories,
-      percentage: totalSubcategories > 0 
-        ? Math.round((completedSubcategories / totalSubcategories) * 100) 
-        : 0
+      percentage: totalSubcategories > 0
+        ? Math.round((completedSubcategories / totalSubcategories) * 100)
+        : 0,
     };
   };
 
@@ -146,7 +160,9 @@ const Dashboard: React.FC<DashboardProps> = ({
           </div>
         </div>
         <div className="assessment-progress mt-2">
-          <p>Assessment completion: {completion.completed} of {completion.total} subcategories ({completion.percentage}%)</p>
+          <p>
+            Assessment completion: {completion.completed} of {completion.total} subcategories ({completion.percentage}%)
+          </p>
         </div>
       </div>
 
@@ -155,17 +171,17 @@ const Dashboard: React.FC<DashboardProps> = ({
         <div className="score-cards-grid">
           {Object.entries(aggregatedCategoryScores).map(([category, score]) => (
             <div key={category} className="category-score-card">
-              <h3 className="text-md font-medium">{category}</h3>
-              <div className="score-display-small">
+              <div className="categoryscore flex justify-between items-center mb-2">
+                <h3 className="text-md font-medium">{category}</h3>
                 <span className={`score-small ${getScoreColorClass(score)}`}>
                   {score.toFixed(1)}
                 </span>
-                <div className="score-bar-container">
-                  <div
-                    className={`score-bar score-bar-${getScoreColorClass(score).split('-')[1]}`}
-                    style={{ width: `${(score / 5) * 100}%` }}
-                  ></div>
-                </div>
+              </div>
+              <div className="score-bar-container">
+                <div
+                  className={`score-bar score-bar-${getScoreColorClass(score).split('-')[1]}`}
+                  style={{ width: `${(score / 5) * 100}%` }}
+                ></div>
               </div>
             </div>
           ))}
@@ -176,14 +192,19 @@ const Dashboard: React.FC<DashboardProps> = ({
         <h2 className="text-xl font-semibold mb-2">Recommended Actions</h2>
         <div className="action-cards">
           {recommendedActions.map((action, index) => (
-            <div 
-              key={index} 
-              className={`action-card action-${action.priority}`}
-              onClick={() => action.category && action.subcategory ? 
-                onSubcategoryClick(action.category, action.subcategory) : null}
-            >
+            <div key={index} className={`action-card action-${action.priority}`}>
               <h3 className="text-md font-medium">{action.title}</h3>
-              <p className="text-sm">{action.description}</p>
+              <p className="text-sm">
+                {action.description}{" "}
+                {action.category && action.subcategory && (
+                  <button
+                    className="text-blue-600 underline hover:text-blue-800"
+                    onClick={() => onSubcategoryClick(action.category!, action.subcategory!)}
+                  >
+                    Click to view assessment
+                  </button>
+                )}
+              </p>
               <div className="action-priority-tag">
                 {action.priority.charAt(0).toUpperCase() + action.priority.slice(1)} Priority
               </div>

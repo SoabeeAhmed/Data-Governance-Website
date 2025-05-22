@@ -197,11 +197,48 @@ ul {
   transition: background-color 0.3s, border-color 0.3s;
 }
 
-.custom-radio input[type="radio"]:checked + span {
-  background-color: #3b82f6;
-  color: white;
-  border-color: #3b82f6;
+.custom-radio.bg-gray-400 input[type="radio"]:checked + span {
+  background-color: #D1D5DB; /* Light gray */
+  color: black;
+  border-color: #D1D5DB;
 }
+
+.custom-radio.bg-red-400 input[type="radio"]:checked + span {
+  background-color: #F87171; /* Red */
+  color: white;
+  border-color: #F87171;
+}
+
+.custom-radio.bg-orange-400 input[type="radio"]:checked + span {
+  background-color: #FB923C; /* Orange */
+  color: white;
+  border-color: #FB923C;
+}
+
+.custom-radio.bg-yellow-400 input[type="radio"]:checked + span {
+  background-color: #FBBF24; /* Yellow */
+  color: white;
+  border-color: #FBBF24;
+}
+
+.custom-radio.bg-green-400 input[type="radio"]:checked + span {
+  background-color: #4ADE80; /* Green */
+  color: white;
+  border-color: #4ADE80;
+}
+
+.custom-radio.bg-blue-400 input[type="radio"]:checked + span {
+  background-color: #60A5FA; /* Blue */
+  color: white;
+  border-color: #60A5FA;
+}
+
+.custom-radio.bg-indigo-400 input[type="radio"]:checked + span {
+  background-color: #818CF8; /* Indigo */
+  color: white;
+  border-color: #818CF8;
+}
+
 
 .sidebar::-webkit-scrollbar {
   display: none;
@@ -685,7 +722,7 @@ ul {
 }
  
 .action-medium {
-  border-left:5px solid #d97706;
+  border-left:5px solid #ffb056;
   background-color: rgba(252, 211, 77, 0.1);
 }
  
@@ -707,7 +744,6 @@ ul {
  
  
 .legend-text {
-  background-color: #a7d3f4;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
 }
@@ -721,4 +757,123 @@ ul {
 .legend-text p {
   color: #151515;  
   margin-left:10px;
+}
+
+/* Add this to your Tailwind configuration or in a custom CSS file */
+
+/* Style for the container */
+.legend-container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+/* Styling the "LEGEND" text vertically */
+.legend-left {
+  display: flex;
+  flex-direction: column;
+  font-size: 10px; /* Adjust font size */
+  font-weight: bold;
+  color: #4B5563;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+/* Style for legend items */
+.legend-right {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Styling each legend item (colored circle + text) */
+.legend-pair{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.legend-item-1{
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.legend-item-2{
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  align-items: flex-end;
+}
+/* Circle styles */
+.legend-circle {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+
+/* Text style */
+.legend-text {
+  font-size: 9px;
+  color: #4B5563;
+  font-weight: 500;
+}
+
+/* Add custom background color classes for different levels */
+.legend-circle.bg-gray-400 { background-color: #D1D5DB; }
+.legend-circle.bg-red-400 { background-color: #F87171; }
+.legend-circle.bg-orange-400 { background-color: #FB923C; }
+.legend-circle.bg-yellow-400 { background-color: #FBBF24; }
+.legend-circle.bg-green-400 { background-color: #4ADE80; }
+.legend-circle.bg-blue-400 { background-color: #60A5FA; }
+.legend-circle.bg-indigo-400 { background-color: #818CF8; }
+
+/* Custom Styles for Legend Component */
+.legend-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.legend-left {
+  /* Aligns the word "LEGEND" vertically */
+  display: flex;
+  flex-direction: column;
+  font-size: 0.6rem;
+  font-weight: bold;
+}
+
+.legend-right {
+  /* Aligns the legend items in a grid with two columns and equal spacing */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  gap: 1rem; /* Space between the items */
+  align-items: center;
+  justify-items: flex-start;
+}
+
+.legend-item {
+  display: flex;
+  align-items: left; /* Centers circle and text */
+  gap: 0.5rem; /* Space between circle and text */
+  margin-right: 5rem;
+}
+
+.legend-circle {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  display: inline-block;
+  background-color: transparent;
+}
+
+.legend-text {
+  font-size: 0.875rem;
+  font-weight: normal;
+  display: inline-block;
+}
+
+/* Example of spacing for each legend element */
+.legend-left div {
+  margin-bottom: 0.25rem; /* Optional: add space between the letters "L", "E", etc. */
 }

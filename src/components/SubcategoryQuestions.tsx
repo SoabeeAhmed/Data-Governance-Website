@@ -10,7 +10,7 @@ interface Question {
 interface SubcategoryQuestionsProps {
   questions: Question[];
   definition: string | null;
-  legend:string | null;
+  legend: string | null;
   onReturn: () => void;
   activeCategory: string;
   activeSubcategory: string;
@@ -109,6 +109,44 @@ const SubcategoryQuestions: React.FC<SubcategoryQuestionsProps> = ({
     });
   };
 
+  // 🧠 Parse legend using regex
+  const parseLegend = (legendStr: string) => {
+    const regex = /(\d+)\s*-\s*([^,]+)/g;
+    const results = [];
+    let match;
+    while ((match = regex.exec(legendStr)) !== null) {
+      results.push({
+        level: parseInt(match[1], 10),
+        label: match[2].trim(),
+      });
+    }
+    return results;
+  };
+
+  // 🎨 Get Tailwind color class for each level
+  const getLegendColorClass = (level: number) => {
+    switch (level) {
+      case 0:
+        return "bg-gray-400";
+      case 1:
+        return "bg-red-400";
+      case 2:
+        return "bg-orange-400";
+      case 3:
+        return "bg-yellow-400";
+      case 4:
+        return "bg-green-400";
+      case 5:
+        return "bg-blue-400";
+      case 6:
+        return "bg-indigo-400";
+      default:
+        return "bg-gray-300";
+    }
+  };
+
+  const legendItems = legend ? parseLegend(legend) : [];
+
   return (
     <div className="p-4 bg-white shadow rounded">
       <div className="flex-row-container">
@@ -119,22 +157,39 @@ const SubcategoryQuestions: React.FC<SubcategoryQuestionsProps> = ({
         <div className="alignment-container mt-6 mb-6">
           <h3 className="text-lg font-semibold score">
             Questions Attempted: {Object.keys(currentAnswers).length} / {questions.length}
-            <br/>
+            <br />
             Average Score: {averageScore.toFixed(1)} / 5
           </h3>
         </div>
       </div>
 
-      {legend && legend.trim() && (
-      <div className="legend-container mb-6">
-        <div className="legend-ribbon"></div>
-          <div className="legend-text">
-            <h2 className="text-xl font-semibold">Legend</h2>
-            <p className="text-gray-500">{legend}</p>
+      {/* Display Legend */}
+      {legendItems.length > 0 && (
+        <div className="legend-container mb-6 flex justify-between items-center">
+          <div className="legend-left text-xs font-bold flex flex-col">
+            {/* <div>L</div>
+            <div>E</div>
+            <div>G</div>
+            <div>E</div>
+            <div>N</div>
+            <div>D</div> */}
           </div>
-      </div>
+
+          {/* Right side: Display the legend items */}
+          <div className="legend-right flex gap-8">
+            {legendItems.map((item, index) => (
+              <div key={index} className="legend-item flex items-center gap-2">
+                <div
+                  className={`legend-circle ${getLegendColorClass(item.level)} w-6 h-6 rounded-full`}
+                ></div>
+                <span className="legend-text text-sm">{`${item.level}-${item.label}`}</span> {/* Formatting as 1-Unaware */}
+              </div>
+            ))}
+          </div>
+        </div>
       )}
 
+      {/* Display Questions */}
       {questions.length > 0 ? (
         questions.map((q, idx) => (
           <QuestionItem

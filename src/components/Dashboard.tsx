@@ -33,7 +33,6 @@ const Dashboard: React.FC<DashboardProps> = ({
   }, [categoryScores, categories]);
 
   const calculateScores = () => {
-    // Calculate aggregated scores for each category
     const aggregated: { [key: string]: number } = {};
     let totalScore = 0;
     let totalEntries = 0;
@@ -50,7 +49,6 @@ const Dashboard: React.FC<DashboardProps> = ({
       }
     });
 
-    // Make sure all categories are represented, even those without scores
     Object.keys(categories).forEach(category => {
       if (aggregated[category] === undefined) {
         aggregated[category] = 0;
@@ -62,13 +60,11 @@ const Dashboard: React.FC<DashboardProps> = ({
   };
 
   const generateRecommendedActions = () => {
-    const actions: { title: string; description: string; priority: string }[] = [];
+    const actions: { title: string; description: string; priority: string; category?: string; subcategory?: string }[] = [];
     
-    // Find categories/subcategories with low scores to generate recommendations
     Object.entries(categoryScores).forEach(([category, subcategories]) => {
       Object.entries(subcategories).forEach(([subcategory, score]) => {
         if (score < 3) {
-          // High priority for very low scores
           const priority = score < 2 ? "high" : "medium";
           actions.push({
             title: `Improve ${subcategory} in ${category}`,
@@ -80,8 +76,7 @@ const Dashboard: React.FC<DashboardProps> = ({
         }
       });
     });
-    
-    // Add general recommendations if not enough specific ones
+
     if (actions.length < 2) {
       if (Object.keys(categoryScores).length === 0) {
         actions.push({
@@ -97,14 +92,13 @@ const Dashboard: React.FC<DashboardProps> = ({
         });
       }
     }
-    
-    // Limit to top 5 actions, prioritizing high priority ones
+
     const sortedActions = actions.sort((a, b) => {
       if (a.priority === "high" && b.priority !== "high") return -1;
       if (a.priority !== "high" && b.priority === "high") return 1;
       return 0;
     }).slice(0, 5);
-    
+
     setRecommendedActions(sortedActions);
   };
 
@@ -138,7 +132,6 @@ const Dashboard: React.FC<DashboardProps> = ({
 
   return (
     <div className="dashboard-overview">
-      {/* Overall Score Card */}
       <div className="overall-score-card">
         <h2 className="text-xl font-semibold mb-2">Overall Data Quality Score</h2>
         <div className="score-display">
@@ -157,7 +150,6 @@ const Dashboard: React.FC<DashboardProps> = ({
         </div>
       </div>
 
-      {/* Category Scores */}
       <div className="category-scores mt-6">
         <h2 className="text-xl font-semibold mb-2">Category Scores</h2>
         <div className="score-cards-grid">
@@ -175,15 +167,11 @@ const Dashboard: React.FC<DashboardProps> = ({
                   ></div>
                 </div>
               </div>
-              
-              {/* Show subcategory scores */}
-              
             </div>
           ))}
         </div>
       </div>
 
-      {/* Recommended Actions */}
       <div className="recommended-actions mt-6">
         <h2 className="text-xl font-semibold mb-2">Recommended Actions</h2>
         <div className="action-cards">

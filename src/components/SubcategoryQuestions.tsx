@@ -15,7 +15,6 @@ interface SubcategoryQuestionsProps {
   activeSubcategory: string;
 }
 
-// Define a type for storing answers by category and subcategory
 interface AnswersStore {
   [category: string]: {
     [subcategory: string]: {
@@ -31,13 +30,10 @@ const SubcategoryQuestions: React.FC<SubcategoryQuestionsProps> = ({
   activeCategory,
   activeSubcategory,
 }) => {
-  // Store all answers across all categories/subcategories
   const [allAnswers, setAllAnswers] = useState<AnswersStore>({});
-  // Current active answers for the displayed subcategory
   const [currentAnswers, setCurrentAnswers] = useState<{ [index: number]: number }>({});
   const [averageScore, setAverageScore] = useState<number>(0);
 
-  // Load previously saved answers from localStorage when component mounts
   useEffect(() => {
     const savedAnswersStr = localStorage.getItem("dataQualityAssessmentAnswers");
     if (savedAnswersStr) {
@@ -50,9 +46,7 @@ const SubcategoryQuestions: React.FC<SubcategoryQuestionsProps> = ({
     }
   }, []);
 
-  // Update current answers when activeCategory/subcategory changes
   useEffect(() => {
-    // Load answers for the current category/subcategory
     if (allAnswers[activeCategory]?.[activeSubcategory]) {
       setCurrentAnswers(allAnswers[activeCategory][activeSubcategory]);
     } else {
@@ -60,7 +54,6 @@ const SubcategoryQuestions: React.FC<SubcategoryQuestionsProps> = ({
     }
   }, [activeCategory, activeSubcategory, allAnswers]);
 
-  // Calculate average score whenever currentAnswers changes
   useEffect(() => {
     const totalScore = Object.values(currentAnswers).reduce((acc, score) => acc + score, 0);
     const answeredCount = Object.keys(currentAnswers).length;
@@ -68,11 +61,9 @@ const SubcategoryQuestions: React.FC<SubcategoryQuestionsProps> = ({
     setAverageScore(score);
   }, [currentAnswers]);
 
-  // Save data to localStorage when unmounting
   useEffect(() => {
     return () => {
       if (Object.keys(currentAnswers).length > 0) {
-        // Save average score to dataQualityAssessmentSubmitted
         const submittedDataStr = localStorage.getItem("dataQualityAssessmentSubmitted");
         const existingData = submittedDataStr ? JSON.parse(submittedDataStr) : [];
 
@@ -97,30 +88,21 @@ const SubcategoryQuestions: React.FC<SubcategoryQuestionsProps> = ({
   }, [averageScore, activeCategory, activeSubcategory, currentAnswers]);
 
   const handleAnswerChange = (index: number, value: number) => {
-    // Update current answers for display
     setCurrentAnswers((prev) => ({
       ...prev,
       [index]: value,
     }));
 
-    // Update all answers in the store
     setAllAnswers((prev) => {
       const updated = { ...prev };
-      
-      // Create category and subcategory objects if they don't exist
       if (!updated[activeCategory]) {
         updated[activeCategory] = {};
       }
       if (!updated[activeCategory][activeSubcategory]) {
         updated[activeCategory][activeSubcategory] = {};
       }
-      
-      // Set the answer
       updated[activeCategory][activeSubcategory][index] = value;
-      
-      // Save to localStorage
       localStorage.setItem("dataQualityAssessmentAnswers", JSON.stringify(updated));
-      
       return updated;
     });
   };

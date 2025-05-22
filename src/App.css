@@ -6,9 +6,7 @@ body, html {
   color: #1f2937;
   height: 100%;
   width: 100%;
-
 }
-
 
 .app-container {
   display: flex;
@@ -17,10 +15,8 @@ body, html {
   overflow: hidden;
 }
 
-/* Sidebar: left 30% */
 .sidebar {
   width: 20%;
-  /* height: 100vh; */
   background-color: #fdfefe;
   border-right: 1px solid rgba(255, 255, 255, 0.1);
   padding: 1.5rem 1rem;
@@ -125,7 +121,6 @@ ul {
   transform: translateX(5px);
 }
 
-
 .main-content {
   width: 80%;
   display: flex;
@@ -134,7 +129,6 @@ ul {
   height: 100vh;
 }
 
-/* Header: top 10% */
 .content-header {
   height: 10%;
   padding: 0.5rem;
@@ -142,12 +136,11 @@ ul {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
   z-index: 1;
   display: flex;
-  justify-content: center;   /* Horizontal centering */
-  align-items: center;       /* Vertical centering */
-  font-size: 15px;           /* Font size */
-  font-weight: bold;         /* Optional: Make it bold */
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  font-weight: bold;
 }
-
 
 .content-body {
   height: 90%;
@@ -160,7 +153,6 @@ ul {
   border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-
 .question-card {
   background: #ffffff;
   padding: 1rem;
@@ -168,7 +160,6 @@ ul {
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  
 }
 
 .question-card:hover {
@@ -207,12 +198,10 @@ ul {
 }
 
 .custom-radio input[type="radio"]:checked + span {
-  background-color: #3b82f6; /* Tailwind's blue-500 */
+  background-color: #3b82f6;
   color: white;
   border-color: #3b82f6;
 }
-
-
 
 .sidebar::-webkit-scrollbar {
   display: none;
@@ -227,7 +216,6 @@ ul {
   border-radius: 20px;
 }
 
-/* Misc utility classes */
 .loading, .error, .no-categories {
   font-size: 0.9rem;
   padding: 1rem;
@@ -278,6 +266,7 @@ ul {
   font-size: 0.85rem;
   transition: transform 0.2s ease;
 }
+
 .content-body::-webkit-scrollbar {
   display: none;
 }
@@ -291,9 +280,6 @@ ul {
   border-radius: 20px;
 }
 
-/* Additional styles for your App.css */
-
-/* Dashboard Overview Styles */
 .dashboard-overview {
   display: flex;
   flex-direction: column;
@@ -435,7 +421,6 @@ ul {
   border-left-color: #059669;
 }
 
-
 .question-card {
   background: #ffffff;
   padding: 1.25rem;
@@ -451,7 +436,6 @@ ul {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
 }
 
-/* Rating radio buttons styling */
 .rating-group {
   display: flex;
   gap: 1rem;
@@ -498,7 +482,6 @@ ul {
   background-color: #2563eb;
 }
 
-/* Definition box styling */
 .definition-box {
   background-color: #f0f9ff;
   border-left: 4px solid #3b82f6;
@@ -520,7 +503,6 @@ ul {
   font-size: 0.95rem;
 }
 
-/* Action buttons */
 .action-buttons {
   display: flex;
   justify-content: flex-end;
@@ -557,77 +539,46 @@ ul {
   border-color: #9ca3af;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .app-container {
     flex-direction: column;
   }
-  
+
   .sidebar {
     width: 100%;
     height: auto;
     max-height: 300px;
   }
-  
+
   .main-content {
     width: 100%;
   }
-  
+
   .score-cards-grid {
     grid-template-columns: 1fr;
   }
 }
 
-/* .custom-radio input[type="radio"] {
-  display: none;
-}
-
-.custom-radio span {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  border: 2px solid #ccc;
-  font-size: 14px;
-  font-weight: 500;
-  color: #333;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin-right: 110px;
-}
-
-.custom-radio input[type="radio"]:checked + span {
-  background-color: #3b82f6; 
-  border-color: #3b82f6;
-  color: white;
-} */
-
-/* Flex container to align the children in a row (same line) */
 .flex-row-container {
   display: flex;
-  justify-content: space-between; /* Space between the left and right sections */
-  align-items: center; /* Align vertically in the center */
-  width: 100%; /* Full width container */
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
-/* Style for the category heading */
 .category-heading {
-  font-size: 1.25rem; /* Similar to text-xl */
-  font-weight: 600; /* Equivalent to font-semibold */
-  margin-right: 2rem; /* Space to the right of the category/subcategory text */
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-right: 2rem;
 }
 
-/* Style for the container holding the questions and score */
 .alignment-container {
   display: flex;
-  flex-direction: column; /* Stack questions and score vertically */
-  gap: 0.5rem; /* Space between the question and score */
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-/* Optional: Style for the h3 text (question count and score) */
 .alignment-container h3 {
-  font-size: 1.125rem; /* Equivalent to text-lg */
-  font-weight: 600; /* Equivalent to font-semibold */
+  font-size: 1.125rem;
+  font-weight: 600;
 }

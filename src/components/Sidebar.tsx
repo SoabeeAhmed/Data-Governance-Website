@@ -39,14 +39,10 @@ const Sidebar: React.FC<SidebarProps> = ({
 
   return (
     <aside className="sidebar">
-      
-      {/* <h2 className="text-lg font-bold mb-4">
-        <FontAwesomeIcon icon={faCircleUser} className="mr-10" />
-          Hello User</h2> */}
-          <h2 className="text-lg font-bold mb-4">
-  <FontAwesomeIcon icon={faCircleUser} style={{ marginRight: "10px" }} />
-  Hello User
-</h2>
+      <h2 className="text-lg font-bold mb-4">
+        <FontAwesomeIcon icon={faCircleUser} style={{ marginRight: "10px" }} />
+        Hello User
+      </h2>
 
 
       {isLoading && (

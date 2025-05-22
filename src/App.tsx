@@ -232,9 +232,6 @@ const App: React.FC = () => {
           {activeCategory && activeSubcategory && (
             <div>
               <div className="flex justify-between items-center mb-4">
-                <h2>
-                  {activeCategory} / {activeSubcategory}
-                </h2>
                 <button
                   className="back-button"
                   onClick={() => {

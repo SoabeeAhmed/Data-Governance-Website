@@ -603,3 +603,31 @@ ul {
   border-color: #3b82f6;
   color: white;
 } */
+
+/* Flex container to align the children in a row (same line) */
+.flex-row-container {
+  display: flex;
+  justify-content: space-between; /* Space between the left and right sections */
+  align-items: center; /* Align vertically in the center */
+  width: 100%; /* Full width container */
+}
+
+/* Style for the category heading */
+.category-heading {
+  font-size: 1.25rem; /* Similar to text-xl */
+  font-weight: 600; /* Equivalent to font-semibold */
+  margin-right: 2rem; /* Space to the right of the category/subcategory text */
+}
+
+/* Style for the container holding the questions and score */
+.alignment-container {
+  display: flex;
+  flex-direction: column; /* Stack questions and score vertically */
+  gap: 0.5rem; /* Space between the question and score */
+}
+
+/* Optional: Style for the h3 text (question count and score) */
+.alignment-container h3 {
+  font-size: 1.125rem; /* Equivalent to text-lg */
+  font-weight: 600; /* Equivalent to font-semibold */
+}

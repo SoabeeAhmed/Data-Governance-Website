@@ -134,13 +134,18 @@ const SubcategoryQuestions: React.FC<SubcategoryQuestionsProps> = ({
         </div>
       )}
 
-      <div className="mt-6 mb-6">
-        <h3 className="text-lg font-semibold">
-          Questions Attempted: {Object.keys(currentAnswers).length} / {questions.length}
-        </h3>
-        <h3 className="text-lg font-semibold">
-          Average Score: {averageScore.toFixed(1)} / 5
-        </h3>
+      <div className="flex-row-container">
+        <h2 className="mb-4">
+          {activeCategory} / {activeSubcategory}
+        </h2>
+
+        <div className="alignment-container mt-6 mb-6">
+          <h3 className="text-lg font-semibold score">
+            Questions Attempted: {Object.keys(currentAnswers).length} / {questions.length}
+            <br/>
+            Average Score: {averageScore.toFixed(1)} / 5
+          </h3>
+        </div>
       </div>
 
       {questions.length > 0 ? (

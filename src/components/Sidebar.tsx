@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
 import * as Icons from "@fortawesome/free-solid-svg-icons";
 import { faCircleUser } from "@fortawesome/free-solid-svg-icons";
+
 interface SidebarProps {
   categories: {
     [category: string]: {
@@ -13,6 +14,10 @@ interface SidebarProps {
   isLoading?: boolean;
   error?: string | null;
   onSubcategoryClick: (category: string, subcategory: string) => void;
+  completedSubcategories: Set<string>;
+  currentActiveCategory: string | null;
+  currentActiveSubcategory: string | null;
+  questions: any[];
 }
 
 const Sidebar: React.FC<SidebarProps> = ({
@@ -20,11 +25,33 @@ const Sidebar: React.FC<SidebarProps> = ({
   isLoading = false,
   error = null,
   onSubcategoryClick,
+  completedSubcategories,
+  currentActiveCategory,
+  currentActiveSubcategory,
+  questions = [],
 }) => {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  const [progressTrigger, setProgressTrigger] = useState(0);
+
+  useEffect(() => {
+    const handleStorageChange = () => {
+      setProgressTrigger(prev => prev + 1);
+    };
+
+    window.addEventListener('storage', handleStorageChange);
+
+    const intervalId = setInterval(() => {
+      setProgressTrigger(prev => prev + 1);
+    }, 500);
+
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+      clearInterval(intervalId);
+    };
+  }, []);
 
   const handleCategoryClick = (category: string) => {
-    setActiveCategory((prev) => (prev === category ? null : category));
+    setActiveCategory(prev => (prev === category ? null : category));
   };
 
   const getIconByName = (iconName: string) => {
@@ -37,13 +64,106 @@ const Sidebar: React.FC<SidebarProps> = ({
     return (Icons as any)[camelName] || faPlus;
   };
 
+  const isSubcategoryEnabled = (category: string, subcategory: string): boolean => {
+    const subcategories = categories[category]?.subcategories || [];
+    const subcategoryIndex = subcategories.indexOf(subcategory);
+    const categoryNames = Object.keys(categories);
+    if (categoryNames[0] === category && subcategoryIndex === 0) {
+      return true;
+    }
+    if (subcategoryIndex > 0) {
+      const previousSubcategory = subcategories[subcategoryIndex - 1];
+      return completedSubcategories.has(`${category}-${previousSubcategory}`);
+    }
+    const categoryIndex = categoryNames.indexOf(category);
+    if (categoryIndex > 0) {
+      const previousCategory = categoryNames[categoryIndex - 1];
+      const previousSubcategories = categories[previousCategory]?.subcategories || [];
+      return previousSubcategories.every(subcategory =>
+        completedSubcategories.has(`${previousCategory}-${subcategory}`)
+      );
+    }
+    return false;
+  };
+
+  const getCategoryProgress = (category: string): number => {
+    const subcategories = categories[category]?.subcategories || [];
+    if (subcategories.length === 0) return 0;
+    const completedCount = subcategories.filter(subcategory =>
+      completedSubcategories.has(`${category}-${subcategory}`)
+    ).length;
+    return (completedCount / subcategories.length) * 100;
+  };
+
+  const getCategoryProgressColor = (categoryIndex: number): string => {
+    const colors = [
+      '#3B82F6',
+      '#10B981',
+      '#F59E0B',
+      '#EF4444',
+      '#8B5CF6',
+      '#06B6D4',
+      '#F97316',
+      '#84CC16',
+    ];
+    return colors[categoryIndex % colors.length];
+  };
+
+  const getSubcategoryProgress = (category: string, subcategory: string): number => {
+    const savedAnswersStr = localStorage.getItem("dataQualityAssessmentAnswers");
+    if (!savedAnswersStr) return 0;
+    try {
+      const savedAnswers = JSON.parse(savedAnswersStr);
+      const categoryAnswers = savedAnswers[category];
+      if (!categoryAnswers || !categoryAnswers[subcategory]) return 0;
+      const answers = categoryAnswers[subcategory];
+      const answeredCount = Object.keys(answers).length;
+      if (currentActiveCategory === category && currentActiveSubcategory === subcategory && questions.length > 0) {
+        return Math.min((answeredCount / questions.length) * 100, 100);
+      }
+      if (completedSubcategories.has(`${category}-${subcategory}`) && answeredCount > 0) {
+        return 100;
+      }
+      if (answeredCount > 0) {
+        const estimatedProgress = Math.min((answeredCount / 5) * 100, 90);
+        return estimatedProgress;
+      }
+      return 0;
+    } catch {
+      return 0;
+    }
+  };
+
+  const handleSubcategoryClick = (category: string, subcategory: string) => {
+    if (!isSubcategoryEnabled(category, subcategory)) {
+      const subcategories = categories[category]?.subcategories || [];
+      const subcategoryIndex = subcategories.indexOf(subcategory);
+      if (subcategoryIndex > 0) {
+        const previousSubcategory = subcategories[subcategoryIndex - 1];
+        alert(`Please complete "${previousSubcategory}" first before accessing "${subcategory}".`);
+      } else {
+        const categoryNames = Object.keys(categories);
+        const categoryIndex = categoryNames.indexOf(category);
+        if (categoryIndex > 0) {
+          const previousCategory = categoryNames[categoryIndex - 1];
+          alert(`Please complete all subcategories in "${previousCategory}" first before accessing "${category}".`);
+        }
+      }
+      return;
+    }
+    onSubcategoryClick(category, subcategory);
+  };
+
+  const isSubcategoryActive = (category: string, subcategory: string): boolean => {
+    return currentActiveCategory === category && currentActiveSubcategory === subcategory;
+  };
+
   return (
     <aside className="sidebar">
       <h2 className="text-lg font-bold mb-4">
         <FontAwesomeIcon icon={faCircleUser} style={{ marginRight: "10px" }} />
         Hello User
       </h2>
-
 
       {isLoading && (
         <div className="loading flex items-center">
@@ -60,40 +180,83 @@ const Sidebar: React.FC<SidebarProps> = ({
 
       {!isLoading && !error && (
         <ul className="space-y-2">
-          {Object.entries(categories).map(([category, data]) => (
-            <li key={category}>
-              <button
-                onClick={() => handleCategoryClick(category)}
-                className="category-button"
-              >
-                <div className="category-label">
-                  <FontAwesomeIcon
-                    icon={getIconByName(data.icon)}
-                    className="category-icon"
-                  />
-                  <span className="font-medium">{category}</span>
+          {Object.entries(categories).map(([category, data], categoryIndex) => {
+            const categoryProgress = getCategoryProgress(category);
+            const progressColor = getCategoryProgressColor(categoryIndex);
+            return (
+              <li key={category}>
+                <div className="category-container">
+                  <button
+                    onClick={() => handleCategoryClick(category)}
+                    className="category-button"
+                    style={{ position: 'relative', paddingBottom: '1rem' }}
+                  >
+                    <div className="category-label">
+                      <FontAwesomeIcon
+                        icon={getIconByName(data.icon)}
+                        className="category-icon"
+                      />
+                      <span className="font-medium">{category}</span>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <span style={{ color: progressColor, fontWeight: '600', fontSize: '0.875rem' }}>
+                        {Math.round(categoryProgress)}%
+                      </span>
+                      <FontAwesomeIcon
+                        icon={activeCategory === category ? faMinus : faPlus}
+                      />
+                    </div>
+                  </button>
+                  <div style={{
+                    width: '100%',
+                    height: '4px',
+                    backgroundColor: 'rgba(229, 231, 235, 0.5)',
+                    borderRadius: '0 0 0.5rem 0.5rem',
+                    marginTop: '-0.25rem'
+                  }}>
+                    <div style={{
+                      height: '100%',
+                      backgroundColor: progressColor,
+                      borderRadius: '0 0 0.5rem 0.5rem',
+                      transition: 'width 0.3s ease-in-out',
+                      width: `${categoryProgress}%`
+                    }}></div>
+                  </div>
                 </div>
-                <FontAwesomeIcon
-                  icon={activeCategory === category ? faMinus : faPlus}
-                />
-              </button>
 
-              {activeCategory === category && data.subcategories.length > 0 && (
-                <ul className="subcategory-list">
-                  {data.subcategories.map((subcategory) => (
-                    <li key={`${category}-${subcategory}`}>
-                      <button
-                        onClick={() => onSubcategoryClick(category, subcategory)}
-                        className="subcategory-item"
-                      >
-                        {subcategory}
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </li>
-          ))}
+                {activeCategory === category && data.subcategories.length > 0 && (
+                  <ul className="subcategory-list">
+                    {data.subcategories.map((subcategory) => {
+                      const subcategoryEnabled = isSubcategoryEnabled(category, subcategory);
+                      const isCompleted = completedSubcategories.has(`${category}-${subcategory}`);
+                      const isActive = isSubcategoryActive(category, subcategory);
+                      const subcategoryProgress = getSubcategoryProgress(category, subcategory);
+                      return (
+                        <li key={`${category}-${subcategory}`}>
+                          <div className="subcategory-container">
+                            <button
+                              onClick={() => handleSubcategoryClick(category, subcategory)}
+                              className={`subcategory-item ${!subcategoryEnabled ? 'disabled' : ''} ${isActive ? 'active' : ''}`}
+                            >
+                              <span className={!subcategoryEnabled ? 'text-gray-400' : ''}>
+                                {subcategory}
+                              </span>
+                              <div className="subcategory-progress-bar">
+                                <div
+                                  className="subcategory-progress-fill"
+                                  style={{ width: `${subcategoryProgress}%` }}
+                                ></div>
+                              </div>
+                            </button>
+                          </div>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                )}
+              </li>
+            );
+          })}
         </ul>
       )}
     </aside>

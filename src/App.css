@@ -198,19 +198,19 @@ ul {
 }
 
 .custom-radio.bg-gray-400 input[type="radio"]:checked + span {
-  background-color: #D1D5DB; /* Light gray */
+  background-color: #D1D5DB; 
   color: black;
   border-color: #D1D5DB;
 }
 
 .custom-radio.bg-red-400 input[type="radio"]:checked + span {
-  background-color: #F87171; /* Red */
+  background-color: #F87171;
   color: white;
   border-color: #F87171;
 }
 
 .custom-radio.bg-orange-400 input[type="radio"]:checked + span {
-  background-color: #FB923C; /* Orange */
+  background-color: #FB923C; 
   color: white;
   border-color: #FB923C;
 }
@@ -228,13 +228,13 @@ ul {
 }
 
 .custom-radio.bg-blue-400 input[type="radio"]:checked + span {
-  background-color: #60A5FA; /* Blue */
+  background-color: #60A5FA; 
   color: white;
   border-color: #60A5FA;
 }
 
 .custom-radio.bg-indigo-400 input[type="radio"]:checked + span {
-  background-color: #818CF8; /* Indigo */
+  background-color: #818CF8; 
   color: white;
   border-color: #818CF8;
 }
@@ -672,10 +672,9 @@ ul {
 
 .action-card {
   position: relative;
-  padding-right: 6rem; /* Add space for button */
+  padding-right: 6rem; 
 }
 
-/* Shared button style */
 .action-card button {
   position: absolute;
   top: 50%;
@@ -687,32 +686,32 @@ ul {
   font-size: 0.875rem;
 }
 
-/* Priority-specific button color */
+
 .action-high button {
-  color: #dc2626; /* Red-600 */
+  color: #dc2626; 
   
 }
 
 .action-high button:hover {
-  color: white; /* Red-700 */
+  color: white; 
   background-color: #b91c1c;
 }
 
 .action-medium button {
-  color: #d97706; /* Amber-600 */
+  color: #d97706; 
 }
 
 .action-medium button:hover {
-  color: white; /* Red-700 */
+  color: white; 
   background-color: #b45309;
 }
 
 .action-low button {
-  color: #059669; /* Green-600 */
+  color: #059669; 
 }
 
 .action-low button:hover {
-  color: white; /* Red-700 */
+  color: white; 
   background-color: #047857;
 }
 
@@ -759,9 +758,8 @@ ul {
   margin-left:10px;
 }
 
-/* Add this to your Tailwind configuration or in a custom CSS file */
 
-/* Style for the container */
+
 .legend-container {
   display: flex;
   justify-content: flex-start;
@@ -770,25 +768,24 @@ ul {
   margin-bottom: 1rem;
 }
 
-/* Styling the "LEGEND" text vertically */
+
 .legend-left {
   display: flex;
   flex-direction: column;
-  font-size: 10px; /* Adjust font size */
+  font-size: 10px; 
   font-weight: bold;
   color: #4B5563;
   margin-right: 1rem;
   margin-left: 1rem;
 }
 
-/* Style for legend items */
 .legend-right {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
 }
 
-/* Styling each legend item (colored circle + text) */
+
 .legend-pair{
   display: flex;
   flex-direction: row;
@@ -805,21 +802,21 @@ ul {
   gap: 0.5rem;
   align-items: flex-end;
 }
-/* Circle styles */
+
 .legend-circle {
   width: 16px;
   height: 16px;
   border-radius: 50%;
 }
 
-/* Text style */
+
 .legend-text {
   font-size: 9px;
   color: #4B5563;
   font-weight: 500;
 }
 
-/* Add custom background color classes for different levels */
+
 .legend-circle.bg-gray-400 { background-color: #D1D5DB; }
 .legend-circle.bg-red-400 { background-color: #F87171; }
 .legend-circle.bg-orange-400 { background-color: #FB923C; }
@@ -828,7 +825,7 @@ ul {
 .legend-circle.bg-blue-400 { background-color: #60A5FA; }
 .legend-circle.bg-indigo-400 { background-color: #818CF8; }
 
-/* Custom Styles for Legend Component */
+
 .legend-container {
   display: flex;
   justify-content: space-between;
@@ -836,7 +833,6 @@ ul {
 }
 
 .legend-left {
-  /* Aligns the word "LEGEND" vertically */
   display: flex;
   flex-direction: column;
   font-size: 0.6rem;
@@ -844,18 +840,17 @@ ul {
 }
 
 .legend-right {
-  /* Aligns the legend items in a grid with two columns and equal spacing */
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Two columns */
-  gap: 1rem; /* Space between the items */
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 1rem; 
   align-items: center;
   justify-items: flex-start;
 }
 
 .legend-item {
   display: flex;
-  align-items: left; /* Centers circle and text */
-  gap: 0.5rem; /* Space between circle and text */
+  align-items: left; 
+  gap: 0.5rem;
   margin-right: 5rem;
 }
 
@@ -873,9 +868,9 @@ ul {
   display: inline-block;
 }
 
-/* Example of spacing for each legend element */
+
 .legend-left div {
-  margin-bottom: 0.25rem; /* Optional: add space between the letters "L", "E", etc. */
+  margin-bottom: 0.25rem; 
 }
 
 .button-container {
@@ -886,11 +881,124 @@ ul {
 }
 
 .back-button {
-  /* Positioning the back button to the top-left */
-  margin-left: 0; /* Ensures it stays at the left side */
+  margin-left: 0; 
 }
 
 .reset-button {
-  /* Positioning the reset button to the top-right */
-  margin-right: 0; /* Ensures it stays at the right side */
+  margin-right: 0; 
 }
+
+.category-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.category-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: rgba(229, 231, 235, 0.5);
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.category-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #10b981, #059669);
+  border-radius: 0 0 0.5rem 0.5rem;
+  transition: width 0.3s ease-in-out;
+}
+
+
+.subcategory-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.subcategory-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: rgba(229, 231, 235, 0.5);
+  border-radius: 0 0 0.375rem 0.375rem;
+}
+
+.subcategory-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+  border-radius: 0 0 0.375rem 0.375rem;
+  transition: width 0.3s ease-in-out;
+}
+
+
+
+.button {
+  align-items: center;
+  background: #FFFFFF;
+  border: 0 solid #E2E8F0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+  color: #1A202C;
+  display: inline-flex;
+  font-family: Inter, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  height: 30px;
+  justify-content: center;
+  line-height: 24px;
+  overflow-wrap: break-word;
+  padding: 24px;
+  text-decoration: none;
+  width: auto;
+  border-radius: 8px;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button:hover {
+  background-color: #eff3fa;
+  text-decoration: none;
+  transition-duration: 0.1s;
+  transform: translateY(2px);
+}
+
+.button:disabled {
+  background-color: #FAFBFC;
+  border-color: rgba(27, 31, 35, 0.15);
+  color: #959DA5;
+  cursor: default;
+}
+
+.button:active {
+  background-color: #EDEFF2;
+  box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
+  transition: none 0s;
+}
+
+.button:focus {
+  outline: 1px transparent;
+}
+
+.button:before,
+.button:-webkit-details-marker {
+  display: none;
+}
+
+.back-button {
+  margin-left: 0;
+}
+
+.reset-button {
+  margin-right: 0;
+}
+
+
+
+
+
+

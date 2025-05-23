@@ -15,6 +15,8 @@ interface SubcategoryQuestionsProps {
   onSubmit: (score: number) => void;
   activeCategory: string;
   activeSubcategory: string;
+  onAllQuestionsAnswered: () => void;
+  isAlreadyCompleted: boolean;
 }
 
 interface AnswersStore {
@@ -33,10 +35,14 @@ const SubcategoryQuestions: React.FC<SubcategoryQuestionsProps> = ({
   onSubmit,
   activeCategory,
   activeSubcategory,
+  onAllQuestionsAnswered,
+  isAlreadyCompleted,
 }) => {
   const [allAnswers, setAllAnswers] = useState<AnswersStore>({});
   const [currentAnswers, setCurrentAnswers] = useState<{ [index: number]: number }>({});
   const [averageScore, setAverageScore] = useState<number>(0);
+  const [allQuestionsAnswered, setAllQuestionsAnswered] = useState<boolean>(false);
+  const [hasTriggeredCompletion, setHasTriggeredCompletion] = useState<boolean>(false);
 
   useEffect(() => {
     const savedAnswersStr = localStorage.getItem("dataQualityAssessmentAnswers");
@@ -56,6 +62,7 @@ const SubcategoryQuestions: React.FC<SubcategoryQuestionsProps> = ({
     } else {
       setCurrentAnswers({});
     }
+    setHasTriggeredCompletion(false);
   }, [activeCategory, activeSubcategory, allAnswers]);
 
   useEffect(() => {
@@ -63,7 +70,16 @@ const SubcategoryQuestions: React.FC<SubcategoryQuestionsProps> = ({
     const answeredCount = Object.keys(currentAnswers).length;
     const score = answeredCount > 0 ? totalScore / answeredCount : 0;
     setAverageScore(score);
-  }, [currentAnswers]);
+
+    const allAnswered = questions.length > 0 && answeredCount === questions.length;
+    setAllQuestionsAnswered(allAnswered);
+
+    if (allAnswered && score > 0 && !hasTriggeredCompletion && !isAlreadyCompleted) {
+      setHasTriggeredCompletion(true);
+      onSubmit(score);
+      onAllQuestionsAnswered();
+    }
+  }, [currentAnswers, questions.length, onSubmit, onAllQuestionsAnswered, hasTriggeredCompletion, isAlreadyCompleted]);
 
   const handleAnswerChange = (index: number, value: number) => {
     setCurrentAnswers((prev) => ({
@@ -85,7 +101,6 @@ const SubcategoryQuestions: React.FC<SubcategoryQuestionsProps> = ({
     });
   };
 
-  // 🧠 Parse legend using regex
   const parseLegend = (legendStr: string) => {
     const regex = /(\d+)\s*-\s*([^,]+)/g;
     const results = [];
@@ -99,7 +114,6 @@ const SubcategoryQuestions: React.FC<SubcategoryQuestionsProps> = ({
     return results;
   };
 
-  // 🎨 Get Tailwind color class for each level
   const getLegendColorClass = (level: number) => {
     switch (level) {
       case 0:
@@ -134,14 +148,13 @@ const SubcategoryQuestions: React.FC<SubcategoryQuestionsProps> = ({
   return (
     <div className="p-4 bg-white shadow rounded">
       <div className="button-container flex justify-between mb-4">
-        <button className="back-button" onClick={onBackToDashboard}>
+        <button className="button back-button" onClick={onBackToDashboard}>
           ← Back to Dashboard
         </button>
-        <button className="reset-button bg-red-500 text-white py-2 px-4 rounded" onClick={handleReset}>
+        <button className="button reset-button" onClick={handleReset}>
           Reset Subcategory
         </button>
       </div>
-
 
       <div className="flex-row-container">
         <h2 className="mb-4">
@@ -153,16 +166,23 @@ const SubcategoryQuestions: React.FC<SubcategoryQuestionsProps> = ({
             Questions Attempted: {Object.keys(currentAnswers).length} / {questions.length}
             <br />
             Average Score: {averageScore.toFixed(1)} / 5
+            {allQuestionsAnswered && !hasTriggeredCompletion && !isAlreadyCompleted && (
+              <div className="mt-2 text-green-600 font-bold">
+                ✓ All questions completed! Moving to next section...
+              </div>
+            )}
+            {allQuestionsAnswered && (hasTriggeredCompletion || isAlreadyCompleted) && (
+              <div className="mt-2 text-blue-600 font-bold">
+                ✓ Section completed!
+              </div>
+            )}
           </h3>
         </div>
       </div>
 
-      {/* Display Legend */}
       {legendItems.length > 0 && (
         <div className="legend-container mb-6 flex justify-between items-center">
           <div className="legend-left text-xs font-bold flex flex-col"></div>
-
-          {/* Right side: Display the legend items */}
           <div className="legend-right flex gap-8">
             {legendItems.map((item, index) => (
               <div key={index} className="legend-item flex items-center gap-2">
@@ -176,7 +196,6 @@ const SubcategoryQuestions: React.FC<SubcategoryQuestionsProps> = ({
         </div>
       )}
 
-      {/* Display Questions */}
       {questions.length > 0 ? (
         questions.map((q, idx) => (
           <QuestionItem
@@ -196,4 +215,3 @@ const SubcategoryQuestions: React.FC<SubcategoryQuestionsProps> = ({
 };
 
 export default SubcategoryQuestions;
-

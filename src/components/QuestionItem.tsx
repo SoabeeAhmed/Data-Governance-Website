@@ -8,25 +8,24 @@ interface QuestionItemProps {
   onChange: (index: number, value: number) => void;
 }
 
-// Function to map the selected number to a color using the provided switch case
 const getOptionColor = (level: number): string => {
   switch (level) {
     case 0:
-      return "bg-gray-400"; // Gray
+      return "bg-gray-400";
     case 1:
-      return "bg-red-400"; // Red
+      return "bg-red-400";
     case 2:
-      return "bg-orange-400"; // Orange
+      return "bg-orange-400";
     case 3:
-      return "bg-yellow-400"; // Yellow
+      return "bg-yellow-400";
     case 4:
-      return "bg-green-400"; // Green
+      return "bg-green-400";
     case 5:
-      return "bg-blue-400"; // Blue
+      return "bg-blue-400";
     case 6:
-      return "bg-indigo-400"; // Indigo
+      return "bg-indigo-400";
     default:
-      return "bg-gray-300"; // Default (Gray) for other cases
+      return "bg-gray-300";
   }
 };
 
@@ -45,7 +44,7 @@ const QuestionItem: React.FC<QuestionItemProps> = ({ question, index, value, opt
               onChange={() => onChange(index, num)}
             />
             <span
-              className={`${getOptionColor(num)} ${value === num ? 'text-white' : 'text-gray-800'} p-2`} // Apply dynamic background color
+              className={`${getOptionColor(num)} ${value === num ? 'text-white' : 'text-gray-800'} p-2`}
             >
               {num}
             </span>

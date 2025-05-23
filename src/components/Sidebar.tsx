@@ -50,6 +50,12 @@ const Sidebar: React.FC<SidebarProps> = ({
     };
   }, []);
 
+  useEffect(() => {
+    if (currentActiveCategory) {
+      setActiveCategory(currentActiveCategory);
+    }
+  }, [currentActiveCategory]);
+
   const handleCategoryClick = (category: string) => {
     setActiveCategory(prev => (prev === category ? null : category));
   };
